@@ -10,8 +10,18 @@
 
 module.exports = (robot) ->
 
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+   robot.hear /badger/i, (res) ->
+     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+   robot.respond /ECHO (.*)$/i, (msg) ->
+     msg.send msg.match[1]
+
+   robot.respond /TIME$/i, (msg) ->
+     msg.send "Server time is: #{new Date()}"
+
+   robot.respond /DIE$/i, (msg) ->
+     msg.send "Goodbye, cruel world."
+     process.exit 0
+
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
@@ -20,8 +30,8 @@ module.exports = (robot) ->
   #   else
   #     res.reply "Opening #{doorType} doors"
   #
-  # robot.hear /I like pie/i, (res) ->
-  #   res.emote "makes a freshly baked pie"
+   robot.hear /I like pie/i, (res) ->
+     res.emote "makes a freshly baked pie"
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
