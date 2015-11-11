@@ -32,6 +32,11 @@ module.exports = (robot) ->
   #
    robot.hear /I like pie/i, (res) ->
      res.emote "makes a freshly baked pie"
+
+   kraken = ["http://giphy.com/gifs/animation-kraken-soDqW21ZbC1oc", "http://giphy.com/gifs/cephalopod-kraken-sorry-if-its-not-biology-enough-rGoyx8v1AgWbe"]
+   robot.hear /Deploy the kraken/i, (res) ->
+     res.send res.random kraken
+
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #

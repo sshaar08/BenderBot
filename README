@@ -6,3 +6,5 @@ you need slack token to be a value
 set --adpater to slack
 
 
+https://github.com/hubot-scripts/hubot-heroku-keepalive
+
