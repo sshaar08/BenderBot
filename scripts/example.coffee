@@ -12,6 +12,7 @@ module.exports = (robot) ->
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+
    robot.respond /ECHO (.*)$/i, (msg) ->
      msg.send msg.match[1]
 
@@ -34,7 +35,7 @@ module.exports = (robot) ->
      res.emote "makes a freshly baked pie"
 
    kraken = ["http://giphy.com/gifs/animation-kraken-soDqW21ZbC1oc", "http://giphy.com/gifs/cephalopod-kraken-sorry-if-its-not-biology-enough-rGoyx8v1AgWbe"]
-   robot.hear /Deploy the kraken/i, (res) ->
+   robot.hear /\bkraken\b/, (res) ->
      res.send res.random kraken
 
   #
@@ -55,13 +56,20 @@ module.exports = (robot) ->
   # robot.leave (res) ->
   #   res.send res.random leaveReplies
   #
-  # answer = process.env.HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING
+   answer = 42
   #
-  # robot.respond /what is the answer to the ultimate question of life/, (res) ->
-  #   unless answer?
-  #     res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
-  #     return
-  #   res.send "#{answer}, but what is the question?"
+   robot.respond /what is the answer to the ultimate question of life/, (res) ->
+     unless answer?
+       res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
+       return
+     res.send "#{answer}, but what is the question?"
+
+   robot.respond /42/, (res) ->
+     unless answer?
+       res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
+       return
+     res.send "Thats the answer, but what is the question?"
+
   #
   # robot.respond /you are a little slow/, (res) ->
   #   setTimeout () ->
