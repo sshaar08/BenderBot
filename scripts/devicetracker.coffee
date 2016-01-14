@@ -7,11 +7,11 @@
 # Configuration:
 #
 # Commands:
-#   add-device [name] - Add a device to the list of devices
-#   remove-device [name] - Remove a device to the list of devices
-#   QA Devices, wheres my shit - Lists devices and their status
-#   Lend qad, Lend QA Device [name] [person] - Lend a device to a person
-#   return-device [name] - List a device as returned
+#   add qa device [name] - Add a device to the list of devices
+#   remove qa device [name] - Remove a device to the list of devices
+#   qa devices, wheres my shit, list devices - Lists devices and their status
+#   lend qa device, lend qad, lend device [name] to [person] - Lend a device to a person
+#   return qa device [name], return device [name], return qad [name] - List a device as returned
 #   where is my [name] - Show status of device
 #
 # Author:
@@ -101,7 +101,7 @@ module.exports = (robot) ->
     device = msg.match[2];
     msg.send tracker.remove device
 
-  robot.hear /(list-device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
+  robot.hear /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
     response = []
     for device, num in tracker.list()
       response.push "#{num}. #{device.name} - #{device.status}"
@@ -112,7 +112,7 @@ module.exports = (robot) ->
     person = msg.match[3]
     msg.send tracker.lend(device, person)
 
-  robot.hear /(return-device|return qa device|return device|return qad) (.+)/i, (msg) ->
+  robot.hear /(return qa device|return device|return qad) (.+)/i, (msg) ->
     device = msg.match[2];
     msg.send tracker.return(device)
 
