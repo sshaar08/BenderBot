@@ -9,7 +9,7 @@
 # Commands:
 #   ADMIN ONLY COMMANDS 
 #   ===
-#   [person] has my [device] - Lend a device to someone. Creates the device if it doesn't exist. Will log the time. 
+#   [person] has my [device] - Lend a device to someone. Will also creates the device if it doesn't exist. 
 #   [person] returned my [device] - Set a device as returned.
 #   I have a [device] - Start keep track of a device
 #   Forget about my [device] - Stop keeping track of a device
@@ -44,7 +44,7 @@ class QA_Device_Tracker
     response
 
   remove: (device) ->
-    response = "What is this " + device + "that you're talking about..."
+    response = "What is this " + device + " that you're talking about..."
     if @cache[device]
       delete @cache[device]
       @robot.brain.data.qa_device_tracker = @cache
@@ -131,4 +131,17 @@ module.exports = (robot) ->
 
   robot.hear /((qa)? device (tracker)? help)/i, (msg) ->
     response = ["QA Device Tracker Help"]
+    response.push("Commands:")
+    response.push("ADMIN ONLY COMMANDS ")
+    response.push("===")
+    response.push("[person] has my [device] - Lend a device to someone. Creates the device if it doesn't exist. Will log the time. ")
+    response.push("[person] returned my [device] - Set a device as returned.")
+    response.push("I have a [device] - Start keep track of a device")
+    response.push("Forget about my [device] - Stop keeping track of a device")
+    response.push("Wheres my shit  - Lists QA devices and their status")
+    response.push("PUBLIC USER COMMANDS")
+    response.push("===")
+    response.push("Where is the [device] - Shows status of a device")
+    response.push("list devices - Shows status of all devices")
+    response.push("whos your daddy - Shows device admin")
     msg.send response.join("\n")
