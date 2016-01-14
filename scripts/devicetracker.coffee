@@ -7,12 +7,19 @@
 # Configuration:
 #
 # Commands:
-#   add qa device [name] - Add a device to the list of devices
-#   remove qa device [name] - Remove a device to the list of devices
-#   qa devices, wheres my shit, list devices - Lists devices and their status
-#   lend qa device, lend qad, lend device [name] to [person] - Lend a device to a person
-#   return qa device [name], return device [name], return qad [name] - List a device as returned
-#   where is my [name] - Show status of device
+#   ADMIN ONLY COMMANDS 
+#   ===
+#   [person] has my [device] - Lend a device to someone. Creates the device if it doesn't exist. Will log the time. 
+#   [person] returned my [device] - Set a device as returned.
+#   I have a [device] - Start keep track of a device
+#   Forget about my [device] - Stop keeping track of a device
+#   Wheres my shit  - Lists QA devices and their status
+#
+#   PUBLIC USER COMMANDS
+#   ===
+#   Where is the [device] - Shows status of a device
+#   list devices - Shows status of all devices
+#
 #
 # Author:
 #   Brian Lam
@@ -29,7 +36,7 @@ class QA_Device_Tracker
   add: (device) ->
     response = "I'll be keeping track of the " + device + " for you."
     if (@cache[device])
-      response = "I'm already keeping track of the " + device
+      response = device + ": Previous status was " + @cache[device]
     else 
       @cache[device] = "With QA"
       @robot.brain.data.qa_device_tracker = @cache
@@ -51,7 +58,6 @@ class QA_Device_Tracker
       response = device + " is now with " + person + ". Good luck please don't break it!"
     response
     
-
   list: -> 
     devices = []
     for key, val of @cache
@@ -72,52 +78,55 @@ class QA_Device_Tracker
     else
       ""
 
-  selfDeniedResponses: (name) ->
-    @self_denied_responses = [
-      "I don't know what device you're talking about man",
-      "Can't find that device br0",
-    ]
-
   get: (thing) ->
     k = if @cache[thing] then @cache[thing] else 0
     return k
 
-  sort: ->
-    s = []
-    for key, val of @cache
-      s.push({ name: key, karma: val })
-    s.sort (a, b) -> b.karma - a.karma
-
 module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
-  allow_self = process.env.KARMA_ALLOW_SELF or "true"
+  device_admin = process.env.DEVICE_ADMIN or "Shell"
 
-  # robot.hear /add-device ([\w.-]+\s*)+/, (msg) ->
-  robot.hear /(Add QA Device) (.+)/i, (msg) ->
-    device = msg.match[2];
-    msg.send tracker.add device
 
-  robot.hear /(Remove QA Device (.+))/i, (msg) ->
-    device = msg.match[2];
-    msg.send tracker.remove device
+  robot.respond /I have a (.+)/i, (msg) ->
+    if msg.message.user.name == device_admin
+      device = msg.match[1]
+      msg.send tracker.add device
 
-  robot.hear /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
-    response = []
+
+  robot.respond /(.+) has my (.+)/i, (msg) ->
+    if msg.message.user.name == device_admin
+      person = msg.match[1]
+      device = msg.match[2]
+      msg.send tracker.add device
+      msg.send tracker.lend(device, person)
+
+  robot.respond /(.+) returned my (.+)/i, (msg) ->
+    if msg.message.user.name == device_admin
+      device = msg.match[2]
+      msg.send tracker.return(device)
+
+  robot.respond /return my (.+)/i, (msg) ->
+    if msg.message.user.name == device_admin
+      device = msg.match[1]
+      msg.send tracker.return(device)
+
+  robot.respond /(Forget about my (.+))/i, (msg) ->
+    if msg.message.user.name == device_admin
+      device = msg.match[2];
+      msg.send tracker.remove device
+
+  robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
+    response = ["Tracked QA devices:"]
     for device, num in tracker.list()
-      response.push "#{num}. #{device.name} - #{device.status}"
+      response.push "#{device.name} - #{device.status}"
     msg.send response.join("\n")
 
-  robot.hear /(lend QA device|lend device|lend qad) (.+) to (.+)/i, (msg) ->
-    device = msg.match[2]
-    person = msg.match[3]
-    msg.send tracker.lend(device, person)
 
-  robot.hear /(return qa device|return device|return qad) (.+)/i, (msg) ->
-    device = msg.match[2];
-    msg.send tracker.return(device)
 
-  robot.hear /(device-status|where is my|wheres my) (.+)/, (msg) ->
+  robot.respond /(device-status|where is my|wheres my|where is the) (.+)/i, (msg) ->
     device = msg.match[2];
     msg.send tracker.status(device)
 
-
+  robot.hear /((qa)? device (tracker)? help)/i, (msg) ->
+    response = ["QA Device Tracker Help"]
+    msg.send response.join("\n")
