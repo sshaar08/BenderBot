@@ -70,7 +70,7 @@ class QA_Device_Tracker
     if (@cache[device])
       @cache[device]
     else
-      "No device"
+      ""
 
   selfDeniedResponses: (name) ->
     @self_denied_responses = [
@@ -93,31 +93,30 @@ module.exports = (robot) ->
   allow_self = process.env.KARMA_ALLOW_SELF or "true"
 
   # robot.hear /add-device ([\w.-]+\s*)+/, (msg) ->
-  robot.hear /(Add QA Device) (.*)/i, (msg) ->
+  robot.hear /(Add QA Device) (.+)/i, (msg) ->
     device = msg.match[2];
     msg.send tracker.add device
 
-  robot.hear /(Remove QA Device (.*))/i, (msg) ->
+  robot.hear /(Remove QA Device (.+))/i, (msg) ->
     device = msg.match[2];
     msg.send tracker.remove device
 
   robot.hear /(list-device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
-    response = ["Listing QA Devices"]
+    response = []
     for device, num in tracker.list()
       response.push "#{num}. #{device.name} - #{device.status}"
     msg.send response.join("\n")
 
-  robot.hear /(lend-device|lend (QA)? Device|) (.*) (.*)/, (msg) ->
-    device = msg.match[0];
-    msg.send device
-    person = msg.match[1];
+  robot.hear /(lend QA device|lend device|lend qad) (.+) to (.+)/i, (msg) ->
+    device = msg.match[2]
+    person = msg.match[3]
     msg.send tracker.lend(device, person)
 
-  robot.hear /(return-device|(R|r)eturn (QA|qa)? (D|d)evice|Return (QAD|qad)) (.*)/, (msg) ->
-    device = msg.match[6];
+  robot.hear /(return-device|return qa device|return device|return qad) (.+)/i, (msg) ->
+    device = msg.match[2];
     msg.send tracker.return(device)
 
-  robot.hear /(device-status|where is my) (.*)/, (msg) ->
+  robot.hear /(device-status|where is my|wheres my) (.+)/, (msg) ->
     device = msg.match[2];
     msg.send tracker.status(device)
 
