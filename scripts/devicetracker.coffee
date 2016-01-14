@@ -139,6 +139,7 @@ module.exports = (robot) ->
     response.push("===")
     response.push("[person] has my [device] - Lend a device to someone. Creates the device if it doesn't exist. Will log the time. ")
     response.push("[person] returned my [device] - Set a device as returned.")
+    response.push("return my [device] - Set a device as returned.")
     response.push("I have a [device] - Start keep track of a device")
     response.push("Forget about my [device] - Stop keeping track of a device")
     response.push("Wheres my shit  - Lists QA devices and their status")
