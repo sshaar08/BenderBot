@@ -57,6 +57,7 @@ module.exports = (robot) ->
   #   res.send res.random leaveReplies
   #
    answer = 42
+   answer_to_uq = ["Thats the answer, but what is the question?","The super computer has not been built yet. http://www.logicalhierarchy.com/blog/wp-content/uploads/2014/10/41_4.jpg "]
   #
    robot.respond /what is the answer to the ultimate question of life/, (res) ->
      unless answer?
@@ -68,7 +69,8 @@ module.exports = (robot) ->
      unless answer?
        res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
        return
-     res.send "Thats the answer, but what is the question?"
+     res.send res.random answer_to_uq
+
 
   #
   # robot.respond /you are a little slow/, (res) ->
