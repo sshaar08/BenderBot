@@ -5,12 +5,14 @@
 #   None
 #
 # Configuration:
+#   HUBOT_DEVICE_ADMIN
 #
 # Commands:
 #   ADMIN ONLY COMMANDS 
 #   ===
 #   [person] has my [device] - Lend a device to someone. Will also creates the device if it doesn't exist. 
 #   [person] returned my [device] - Set a device as returned.
+#   return my [device] - Set a device as returned.
 #   I have a [device] - Start keep track of a device
 #   Forget about my [device] - Stop keeping track of a device
 #   Wheres my shit  - Lists QA devices and their status
@@ -85,7 +87,8 @@ class QA_Device_Tracker
 
 module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
-  device_admin = process.env.DEVICE_ADMIN or "Shell"
+  # Set device_admin to "Shell" for local environment
+  device_admin = process.env.HUBOT_DEVICE_ADMIN or "Shell"
 
 
   robot.respond /I have a (.+)/i, (msg) ->
