@@ -88,7 +88,7 @@ class QA_Device_Tracker
 module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
-  device_admin = process.env.HUBOT_DEVICE_ADMIN or "Shell"
+  device_admin = process.env.HUBOT_DEVICE_ADMIN or "sshaar08"
 
 
   robot.respond /I have a (.+)/i, (msg) ->
