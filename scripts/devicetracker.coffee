@@ -19,6 +19,7 @@
 #   ===
 #   Where is the [device] - Shows status of a device
 #   list devices - Shows status of all devices
+#   whos your daddy - Shows device admin
 #
 #
 # Author:
@@ -121,11 +122,12 @@ module.exports = (robot) ->
       response.push "#{device.name} - #{device.status}"
     msg.send response.join("\n")
 
-
-
   robot.respond /(device-status|where is my|wheres my|where is the) (.+)/i, (msg) ->
     device = msg.match[2];
     msg.send tracker.status(device)
+
+  robot.respond /(whos your daddy)/i, (msg) ->
+    msg.send device_admin
 
   robot.hear /((qa)? device (tracker)? help)/i, (msg) ->
     response = ["QA Device Tracker Help"]
