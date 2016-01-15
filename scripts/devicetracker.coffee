@@ -88,34 +88,38 @@ class QA_Device_Tracker
 module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
-  device_admin = process.env.HUBOT_DEVICE_ADMIN or "sshaar08"
+
+  if process.env.HUBOT_DEVICE_ADMIN
+    device_admins = process.env.HUBOT_DEVICE_ADMIN
+  else
+    device_admins = ["sshaar08", "judy", "Shell"]
 
 
   robot.respond /I have a (.+)/i, (msg) ->
-    if msg.message.user.name == device_admin
+    if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[1]
       msg.send tracker.add device
 
 
   robot.respond /(.+) has my (.+)/i, (msg) ->
-    if msg.message.user.name == device_admin
+    if (device_admins.indexOf(msg.message.user.name) >= 0)
       person = msg.match[1]
       device = msg.match[2]
       msg.send tracker.add device
       msg.send tracker.lend(device, person)
 
   robot.respond /(.+) returned my (.+)/i, (msg) ->
-    if msg.message.user.name == device_admin
+    if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[2]
       msg.send tracker.return(device)
 
   robot.respond /return my (.+)/i, (msg) ->
-    if msg.message.user.name == device_admin
+    if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[1]
       msg.send tracker.return(device)
 
   robot.respond /(Forget about my (.+))/i, (msg) ->
-    if msg.message.user.name == device_admin
+    if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[2];
       msg.send tracker.remove device
 
