@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   <robot> funny
+#   hubot funny
 #
 # Authors:
 #   Brian Lam
