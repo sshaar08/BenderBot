@@ -95,32 +95,32 @@ module.exports = (robot) ->
     device_admins = ["sshaar08", "judy", "Shell"]
 
 
-  robot.respond /I have a (.+)/i, (msg) ->
+  robot.respond /I have (a|an) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      device = msg.match[1]
+      device = msg.match[2]
       msg.send tracker.add device
 
 
-  robot.respond /(.+) has my (.+)/i, (msg) ->
+  robot.respond /(.+) has (the|my) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      person = msg.match[1]
-      device = msg.match[2]
+      person = msg.match[2]
+      device = msg.match[3]
       msg.send tracker.add device
       msg.send tracker.lend(device, person)
 
-  robot.respond /(.+) returned my (.+)/i, (msg) ->
+  robot.respond /(.+) returned (the|my) (.+)/i, (msg) ->
+    if (device_admins.indexOf(msg.message.user.name) >= 0)
+      device = msg.match[3]
+      msg.send tracker.return(device)
+
+  robot.respond /return (the|my) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[2]
       msg.send tracker.return(device)
 
-  robot.respond /return my (.+)/i, (msg) ->
+  robot.respond /(Forget about (the|my) (.+))/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      device = msg.match[1]
-      msg.send tracker.return(device)
-
-  robot.respond /(Forget about my (.+))/i, (msg) ->
-    if (device_admins.indexOf(msg.message.user.name) >= 0)
-      device = msg.match[2];
+      device = msg.match[3];
       msg.send tracker.remove device
 
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
