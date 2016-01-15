@@ -103,7 +103,7 @@ module.exports = (robot) ->
 
   robot.respond /(.+) has (the|my) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      person = msg.match[2]
+      person = msg.match[1]
       device = msg.match[3]
       msg.send tracker.add device
       msg.send tracker.lend(device, person)
