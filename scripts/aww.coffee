@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot aww - Display the picture from /r/aww
+#   <robot> aww - Display the picture from /r/aww
 #
 # Author:
 #   eliperkins

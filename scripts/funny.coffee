@@ -1,5 +1,5 @@
 # Description:
-#   Pulls something from /r/funny
+#   Pulls a random link from /r/funny
 #
 # Dependencies:
 #   None
@@ -8,8 +8,7 @@
 #   None
 #
 # Commands:
-#   bender funny
-#
+#   <robot> funny
 #
 # Authors:
 #   Brian Lam

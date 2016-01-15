@@ -8,21 +8,16 @@
 #   HUBOT_DEVICE_ADMIN
 #
 # Commands:
-#   ADMIN ONLY COMMANDS 
-#   ===
-#   [person] has my [device] - Lend a device to someone. Will also creates the device if it doesn't exist. 
-#   [person] returned my [device] - Set a device as returned.
-#   return my [device] - Set a device as returned.
-#   I have a [device] - Start keep track of a device
-#   Forget about my [device] - Stop keeping track of a device
-#   Wheres my shit  - Lists QA devices and their status
+#   <robot> <person> has my <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
+#   <robot> <person> returned my <device> - Set a device as returned. (For Device Admin)
+#   <robot> return my <device> - Set a device as returned. (For Device Admin)
+#   <robot> I have a <device> - Start keep track of a device. (For Device Admin)
+#   <robot> Forget about my <device> - Stop keeping track of a device. (For Device Admin)
+#   <robot> Wheres my shit  - Lists QA devices and their status. (For Device Admin)
 #
-#   PUBLIC USER COMMANDS
-#   ===
-#   Where is the [device] - Shows status of a device
-#   list devices - Shows status of all devices
-#   whos your daddy - Shows device admin
-#
+#   <robot> Where is the <device> - Shows status of a tracked device
+#   <robot> list devices - Shows status of all tracked devices
+#   <robot> whos your daddy - Shows device admin
 #
 # Author:
 #   Brian Lam
