@@ -89,38 +89,41 @@ module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
-  if process.env.HUBOT_DEVICE_ADMIN
-    device_admins = process.env.HUBOT_DEVICE_ADMIN
-  else
-    device_admins = ["sshaar08", "judy", "Shell"]
+  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar08", "judy", "Shell"]
+  lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
+
 
 
   robot.respond /I have (a|an) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[2]
+      device = device.toLowerCase() if lowercase_devices
       msg.send tracker.add device
-
 
   robot.respond /(.+) has (the|my) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       person = msg.match[1]
       device = msg.match[3]
+      device = device.toLowerCase() if lowercase_devices
       msg.send tracker.add device
       msg.send tracker.lend(device, person)
 
   robot.respond /(.+) returned (the|my) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[3]
+      device = device.toLowerCase() if lowercase_devices
       msg.send tracker.return(device)
 
   robot.respond /return (the|my) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[2]
+      device = device.toLowerCase() if lowercase_devices
       msg.send tracker.return(device)
 
   robot.respond /(Forget about (the|my) (.+))/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       device = msg.match[3];
+      device = device.toLowerCase() if lowercase_devices
       msg.send tracker.remove device
 
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
@@ -131,10 +134,11 @@ module.exports = (robot) ->
 
   robot.respond /(device-status|where is my|wheres my|where is the) (.+)/i, (msg) ->
     device = msg.match[2];
+    device = device.toLowerCase() if lowercase_devices
     msg.send tracker.status(device)
 
   robot.respond /(whos your daddy)/i, (msg) ->
-    msg.send device_admin
+    msg.send device_admins  
 
   robot.hear /((qa)? device (tracker)? help)/i, (msg) ->
     response = ["QA Device Tracker Help"]
