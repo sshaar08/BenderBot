@@ -120,9 +120,9 @@ module.exports = (robot) ->
       device = device.toLowerCase() if lowercase_devices
       msg.send tracker.return(device)
 
-  robot.respond /(Forget about (the|my) (.+))/i, (msg) ->
+  robot.respond /(Forget( about)? (the|my) (.+))/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      device = msg.match[3];
+      device = msg.match[4];
       device = device.toLowerCase() if lowercase_devices
       msg.send tracker.remove device
 
