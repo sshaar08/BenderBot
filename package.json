@@ -2,7 +2,7 @@
   "name": "Bender",
   "version": "0.0.0",
   "private": true,
-  "author": "sms@alexanderinteractive.com",
+  "author": "sshaar08@gmail.com", 
   "description": "A simple helpful bending robot for our planet express!",
   "dependencies": {
     "hubot": "^2.16.0",
