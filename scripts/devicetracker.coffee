@@ -31,8 +31,8 @@ class QA_Device_Tracker
   constructor: (@robot) ->
     @cache = {
     'ny' : {
-      1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',  }, 
-      2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.2.1', MID: 602919400114327898, 'location': '',},
+      1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', 'MID': 4327902, 'location': '',  }, 
+      2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.2.1', 'MID': 4327898, 'location': '',},
       },
     #'sf' :{
     #  1 : { 'Device_name' : 'sfiPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',}, 
@@ -73,7 +73,7 @@ class QA_Device_Tracker
     devices = []
     for office of @cache
       for key, device of @cache[office]
-        devices.push({office: office, name: key, item: device['Device_name'], location: device['location']})
+        devices.push({office: office, name: key, item: device['Device_name']-device['MID'], location: device['location']})
     devices    
 
   return: (office, device) ->
