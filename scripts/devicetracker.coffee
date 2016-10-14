@@ -2,7 +2,7 @@
 #   Track QA Devices
 #
 # Dependencies:
-#   None
+#   Slack, Node
 #
 # Configuration:
 #   HUBOT_DEVICE_ADMIN
@@ -20,10 +20,12 @@
 #   hubot whos qa admin - Shows device admin
 #
 # Author:
-#   Brian Lam
-# xoxb-69070161077-hpszX2hHCYw02nK8w5GEmW8T
+#   Brian Lam V.01
+#   Sammy Shaar V.02
+# 
 
 #TODO add a que to the request list
+#TODO Make the bot DM the user that asks for the info to remove noise in channels.
 
 
 class QA_Device_Tracker
