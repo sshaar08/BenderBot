@@ -21,13 +21,17 @@
 #
 # Author:
 #   Brian Lam
+# xoxb-69070161077-hpszX2hHCYw02nK8w5GEmW8T
+
+#TODO add a que to the request list
+
 
 class QA_Device_Tracker
 
   constructor: (@robot) ->
     @cache = {
     'nyc' : {
-      1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',}, 
+      1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',  }, 
       2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.2.1', MID: 602919400114327898, 'location': '',},
       },
     'SF' :{
@@ -94,7 +98,7 @@ module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
-  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "cassiehaffner", "Shell"]
+  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "cassiehaffner", "sammy", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
 
   '''
