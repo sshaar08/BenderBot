@@ -30,14 +30,14 @@ class QA_Device_Tracker
 
   constructor: (@robot) ->
     @cache = {
-    'nyc' : {
+    'ny' : {
       1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',  }, 
       2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.2.1', MID: 602919400114327898, 'location': '',},
       },
-    'SF' :{
-      1 : { 'Device_name' : 'sfiPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',}, 
-      2 : { 'Device_name' : 'sfiPhone 6', 'OS Version': 'iOS 9.2.1', MID: 602919400114327898, 'location': '',},
-      }
+    #'sf' :{
+    #  1 : { 'Device_name' : 'sfiPhone 5S', 'OS Version': 'iOS 9.2', MID: 602919400114327902, 'location': '',}, 
+    #  2 : { 'Device_name' : 'sfiPhone 6', 'OS Version': 'iOS 9.2.1', MID: 602919400114327898, 'location': '',},
+    #  }
     }
 
     @robot.brain.on 'loaded', =>
