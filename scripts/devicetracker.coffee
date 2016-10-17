@@ -174,15 +174,15 @@ module.exports = (robot) ->
     device = device.toLowerCase() if lowercase_devices
     msg.send tracker.status(office, device)
 
-  robot.respond /(whos qa admin)/i, (msg) ->
+  robot.respond /(whos admin)/i, (msg) ->
     msg.send device_admins  
 
-  robot.hear /((qa)? device (tracker)? help)/i, (msg) ->
+  robot.hear /(device help)/i, (msg) ->
     response = ["QA Device Tracker Help"]
     response.push("Commands:")
     response.push("ADMIN ONLY COMMANDS ")
     response.push("===")
-    response.push("[person] returned my [device] - Set a device as returned.")
+    response.push("[person] returned my/the [device] - Set a device as returned.")
     response.push("return the [device] - Set a device as returned.")
     response.push("list devices  - Lists QA devices and their status")
     response.push("PUBLIC USER COMMANDS")
