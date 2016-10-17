@@ -102,7 +102,7 @@ class QA_Device_Tracker
     devices = []
     for office of @cache
       for key, device of @cache[office]
-        devices.push({office: office, name: key, item: device['Device_name'], mid: device['MID'], location: device['location']})
+        devices.push({office: office, name: key, item: device['Device_name'], mid: device['MID'], OS: device['OS Version'], location: device['location']})
     devices    
 
   return: (office, device) ->
@@ -165,7 +165,7 @@ module.exports = (robot) ->
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
     response = ["Tracked QA devices:"]
     for office, num in tracker.list()
-      response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *mid*: #{office.mid} - *location*: _#{office.location}_"
+      response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _#{office.location}_"
     msg.send response.join("\n")
 
   robot.respond /(device-status|where is my|wheres my|where is the) (.+) (.+)/i, (msg) ->
