@@ -8,12 +8,10 @@
 #   HUBOT_DEVICE_ADMIN
 #
 # Commands:
-#   hubot <person> has my <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
+#   hubot <person> has the/my <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
 #   hubot <person> returned my <device> - Set a device as returned. (For Device Admin)
 #   hubot return my <device> - Set a device as returned. (For Device Admin)
 #   hubot I have a <device> - Start keep track of a device. (For Device Admin)
-#   hubot Forget about my <device> - Stop keeping track of a device. (For Device Admin)
-#   hubot Wheres my shit  - Lists QA devices and their status. (For Device Admin)
 #
 #   hubot Where is the <device> - Shows status of a tracked device
 #   hubot list devices - Shows status of all tracked devices
