@@ -127,7 +127,7 @@ module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
-  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "cassiehaffner", "sammy", "Shell"]
+  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
 
   '''
