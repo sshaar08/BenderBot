@@ -94,9 +94,9 @@ class QA_Device_Tracker
   lend: (office, device, person) ->
     response = "I don't know about the " + device
     if (@cache[office][device])
-      @cache[office][device]['location'] = "Lent to " + person
+      @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
-      response = @cache[office][device]['Device_name'] + " is now with " + person + ". Good luck please don't break it!"
+      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + ". Good luck please don't break it!"
     response
     
   list: -> 
@@ -166,7 +166,7 @@ module.exports = (robot) ->
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
     response = ["Tracked QA devices:"]
     for office, num in tracker.list()
-      response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _#{office.location}_"
+      response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     msg.send response.join("\n")
 
   robot.respond /(list android device(s)?)/i, (msg) ->
@@ -183,12 +183,12 @@ module.exports = (robot) ->
         response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _#{office.location}_"
     msg.send response.join("\n")
 
-  '''
+
   robot.respond /storage delete (\w*)$/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      delete robot.brain.data[msg.match[1]]
+      @robot.brain.remove(qa_device_tracker)
       msg.send "#{msg.match[1]} deleted from storage"
-  '''
+
 
 
   robot.respond /(device-status|where is my|wheres my|where is the) (.+) (.+)/i, (msg) ->
