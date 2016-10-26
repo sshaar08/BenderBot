@@ -139,14 +139,17 @@ module.exports = (robot) ->
       msg.send tracker.add device
   '''
   #remove admins here
-  robot.respond /(.+) has (the|my) (.+) (.+)/i, (msg) ->
+  robot.respond /(.+) (has|have) the (.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       person = msg.match[1]
+      if (person == 'i' | person == 'I')
+        person = '@' + msg.message.user.name
       office = msg.match[3]
       device = msg.match[4]
       device = device.toLowerCase() if lowercase_devices
       #msg.send tracker.add(office, device)
       msg.send tracker.lend(office, device, person)
+
 
   robot.respond /(.+) returned (the|my) (.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
