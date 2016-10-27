@@ -67,6 +67,9 @@ class QA_Device_Tracker
       36 : { 'Device_name': 'Samsung Galaxy Tab 10.1','OS Version':  '4.0.4 Ice Cream Sandwich', 'MID': 299257, 'location': '', 'type' : 'Android'},
       37 : { 'Device_name': 'Samsung Galaxy Tab 7.0 Plus', 'OS Version': '4.0.4 Ice Cream Sandwich', 'MID': 296553, 'location': '', 'type' : 'Android' }
       38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'IOS'}, 
+      39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'IOS'}, 
+      40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'Android'}, 
+
       }
     }
 
@@ -128,7 +131,7 @@ module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
-  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
+  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
 
   '''
@@ -140,15 +143,14 @@ module.exports = (robot) ->
   '''
   #remove admins here
   robot.respond /(.+) (has|have) the (.+) (.+)/i, (msg) ->
-    if (device_admins.indexOf(msg.message.user.name) >= 0)
-      person = msg.match[1]
-      if (person == 'i' | person == 'I')
-        person = '@' + msg.message.user.name
-      office = msg.match[3]
-      device = msg.match[4]
-      device = device.toLowerCase() if lowercase_devices
-      #msg.send tracker.add(office, device)
-      msg.send tracker.lend(office, device, person)
+    person = msg.match[1]
+    if (person == 'i' | person == 'I')
+      person = '@' + msg.message.user.name
+    office = msg.match[3]
+    device = msg.match[4]
+    device = device.toLowerCase() if lowercase_devices
+    #msg.send tracker.add(office, device)
+    msg.send tracker.lend(office, device, person)
 
 
   robot.respond /(.+) returned (the|my) (.+) (.+)/i, (msg) ->
