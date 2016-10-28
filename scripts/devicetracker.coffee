@@ -99,7 +99,7 @@ class QA_Device_Tracker
     if (@cache[office][device])
       @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
-      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + ". Good luck please don't break it!"
+      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + ". please return it when your done!"
     response
     
   list: -> 
@@ -112,7 +112,7 @@ class QA_Device_Tracker
   return: (office, device) ->
     response = "No device found"
     if (@cache[office][device])
-      @cache[office][device]['location'] = "With QA"
+      @cache[office][device]['location'] = "In the Vault"
       response = @cache[office][device]['Device_name'] + " is now safe at home with QA <3"
       @robot.brain.data.qa_device_tracker = @cache
     response
