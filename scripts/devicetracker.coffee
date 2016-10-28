@@ -71,7 +71,6 @@ class QA_Device_Tracker
       40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '6.0.1', 'MID': 414091, 'location': '', 'type': 'Android'},
       41 : { 'Device_name' : 'Samsung Galaxy S5', 'OS Version': '', 'MID': ' ', 'location': '', 'type': 'Android'}, 
       42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
-      
       }
     }
 
