@@ -70,6 +70,8 @@ class QA_Device_Tracker
       39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'IOS'}, 
       40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '6.0.1', 'MID': 414091, 'location': '', 'type': 'Android'},
       41 : { 'Device_name' : 'Samsung Galaxy S5', 'OS Version': '', 'MID': ' ', 'location': '', 'type': 'Android'}, 
+      42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
+      
       }
     }
 
@@ -77,12 +79,12 @@ class QA_Device_Tracker
       if @robot.brain.data.qa_device_tracker
         @cache = @robot.brain.data.qa_device_tracker
 
-  add: (office, device) ->
-    response = "I'll be keeping track of the " + device + " for you."
-    if (@cache[office][device])
-      response = device + ": Previous location was " + @cache[office][device]['location']
+  add: (office, id, device, OS, MID, type) ->
+    response = "I'll be keeping track of the " + office + "id: " + id +' Device_name: ' + device + ' OS Version: ' + OS + ' MID: ' + MID  + ' location: ', 'type: ' + type + " for you."
+    if (@cache[office][id])
+      response = id + "already exists." + " update coming to change device values"
     else 
-      @cache[device] = "With QA"
+      @cache[office][id] = 'Device_name' : device, 'OS Version': OS, 'MID': MID, 'location': "The Vault", 'type': type
       @robot.brain.data.qa_device_tracker = @cache
     response
 
@@ -99,7 +101,7 @@ class QA_Device_Tracker
     if (@cache[office][device])
       @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
-      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + ". please return it when your done!"
+      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + ". please return it when you're done!"
     response
     
   list: -> 
@@ -134,13 +136,18 @@ module.exports = (robot) ->
   device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
 
-  '''
-  robot.respond /new device for (.+) (.+)/i, (msg) ->
+  #office, id, device, OS, MID, type  
+  robot.respond /new device (.+) (.+) (.+) (.+) (.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      device = msg.match[2]
-      device = device.toLowerCase() if lowercase_devices
-      msg.send tracker.add device
-  '''
+      office = msg.match[1]
+      device = msg.match[3]
+      id = msg.match[2]
+      OS = msg.match[4]
+      MID = msg.match[5]
+      type = msg.match[6]
+      msg.send tracker.add(office, id, device, OS, MID, type )
+
+  
   #remove admins here
   robot.respond /(.+) (has|have) the (.+) (.+)/i, (msg) ->
     person = msg.match[1]
