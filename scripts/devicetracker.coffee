@@ -164,7 +164,6 @@ module.exports = (robot) ->
       person = '@' + msg.message.user.name
     office = msg.match[3]
     device = msg.match[4]
-    device = device.toLowerCase() if lowercase_devices
     #msg.send tracker.add(office, device)
     msg.send tracker.lend(office, device, person)
 
@@ -178,9 +177,10 @@ module.exports = (robot) ->
 
   robot.respond /return (.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      office = msg.match[2]
-      device = msg.match[3]
-      device = device.toLowerCase() if lowercase_devices
+      office = msg.match[1]
+      device = msg.match[2]
+      console.log(device)
+      device = device
       msg.send tracker.return(office, device)
 
   
