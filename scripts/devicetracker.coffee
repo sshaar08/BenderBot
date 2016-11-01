@@ -8,9 +8,9 @@
 #   HUBOT_DEVICE_ADMIN
 #
 # Commands:
+#   hubot device help - Help with commands
 #   hubot <person> has the/my <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
-#   hubot <person> returned my <device> - Set a device as returned. (For Device Admin)
-#   hubot return my <device> - Set a device as returned. (For Device Admin)
+#   hubot return <office> <device> - Set a device as returned. (For Device Admin)
 #
 #   hubot Where is the <device> - Shows status of a tracked device
 #   hubot list devices - Shows status of all tracked devices
@@ -227,7 +227,7 @@ module.exports = (robot) ->
     response.push("ADMIN ONLY COMMANDS ")
     response.push("===")
     response.push("[person] returned my/the [office] [device] - Set a device as returned.")
-    response.push("return the [device] - Set a device as returned.")
+    response.push("return [office] [device] - Set a device as returned.")
     response.push("list devices  - Lists QA devices and their status")
     response.push("PUBLIC USER COMMANDS")
     response.push("===")
