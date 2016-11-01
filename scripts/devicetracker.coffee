@@ -71,6 +71,9 @@ class QA_Device_Tracker
       40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '6.0.1', 'MID': 414091, 'location': '', 'type': 'Android'},
       41 : { 'Device_name' : 'Samsung Galaxy S5', 'OS Version': '', 'MID': ' ', 'location': '', 'type': 'Android'}, 
       42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
+      43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
+      44 : { 'Device_name': 'Samsung Galaxy s2 ', 'OS Version': '6.0.1', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
+      
       }
     }
 
@@ -79,11 +82,16 @@ class QA_Device_Tracker
         @cache = @robot.brain.data.qa_device_tracker
 
   add: (office, id, device, OS, MID, type) ->
-    response = "I'll be keeping track of the " + office + "id: " + id +' Device_name: ' + device + ' OS Version: ' + OS + ' MID: ' + MID  + ' location: ', 'type: ' + type + " for you."
     if (@cache[office][id])
       response = id + "already exists." + " update coming to change device values"
     else 
-      @cache[office][id] = 'Device_name' : device, 'OS Version': OS, 'MID': MID, 'location': "The Vault", 'type': type
+      @cache[office][id] = {}
+      @cache[office][id]['Device_name'] = device
+      @cache[office][id]['OS Version'] = OS
+      @cache[office][id]['MID'] = MID
+      @cache[office][id]['location'] = "The Vault"
+      @cache[office][id]['type'] = type
+      response = 'Ill be keeping track of the' + #{office} + 'id ' + #{id} +' Device_name ' + #{device} + ' OS Version ' + #{OS} + ' MID ' + #{MID}  + ' location ' + 'The Vault' + 'type' + #{type} + " for you."
       @robot.brain.data.qa_device_tracker = @cache
     response
 
@@ -138,13 +146,15 @@ module.exports = (robot) ->
   #office, id, device, OS, MID, type  
   robot.respond /new device (.+) (.+) (.+) (.+) (.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
+      console.log(msg)
       office = msg.match[1]
       device = msg.match[3]
-      id = msg.match[2]
+      idd = msg.match[2]
+      console.log(typeof(id))
       OS = msg.match[4]
       MID = msg.match[5]
       type = msg.match[6]
-      msg.send tracker.add(office, id, device, OS, MID, type )
+      msg.send tracker.add(office, idd, device, OS, MID, type )
 
   
   #remove admins here
@@ -166,7 +176,7 @@ module.exports = (robot) ->
       device = device.toLowerCase() if lowercase_devices
       msg.send tracker.return(office, device)
 
-  robot.respond /return (the|my) (.+) (.+)/i, (msg) ->
+  robot.respond /return (.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       office = msg.match[2]
       device = msg.match[3]
