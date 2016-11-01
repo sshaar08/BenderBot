@@ -9,7 +9,7 @@
 #
 # Commands:
 #   hubot device help - Help with commands
-#   hubot <person> has the/my <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
+#   hubot <person> has|have <office> <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
 #   hubot return <office> <device> - Set a device as returned. (For Device Admin)
 #
 #   hubot Where is the <device> - Shows status of a tracked device
@@ -158,7 +158,7 @@ module.exports = (robot) ->
 
   
   #remove admins here
-  robot.respond /(.+) (has|have) the (.+) (.+)/i, (msg) ->
+  robot.respond /(.+) (has|have) (.+) (.+)/i, (msg) ->
     person = msg.match[1]
     if (person == 'i' | person == 'I')
       person = '@' + msg.message.user.name
@@ -231,7 +231,7 @@ module.exports = (robot) ->
     response.push("list devices  - Lists QA devices and their status")
     response.push("PUBLIC USER COMMANDS")
     response.push("===")
-    response.push("[person] has [office] [device_number] - Lend a device to someone")
+    response.push("[person] has|have [office] [device_number] - Lend a device to someone")
     response.push("Where is the [office] [device] - Shows status of a device")
     response.push("list devices - Shows status of all devices")
     response.push("whos admin - Shows device admin")
