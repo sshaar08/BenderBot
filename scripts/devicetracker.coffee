@@ -123,6 +123,8 @@ class QA_Device_Tracker
 
   return: (office, device) ->
     response = "No device found"
+    console.log(office)
+    console.log(device)
     if (@cache[office][device])
       @cache[office][device]['location'] = "In the Vault"
       response = @cache[office][device]['Device_name'] + " is now safe at home with QA <3"
@@ -188,10 +190,10 @@ module.exports = (robot) ->
       device = device.toLowerCase() if lowercase_devices
       msg.send tracker.return(office, device)
 
-  robot.respond /return (.+) (.+)/i, (msg) ->
+  robot.respond /return\s?(the|my)?\s?(.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
-      office = msg.match[1]
-      device = msg.match[2]
+      office = msg.match[2]
+      device = msg.match[3]
       device = device
       msg.send tracker.return(office, device)
 
