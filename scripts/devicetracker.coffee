@@ -107,7 +107,8 @@ class QA_Device_Tracker
     response = "I don't know about the " + device
     console.log(office)
     console.log(device)
-
+    office = office.toLowerCase()
+    console.log(office)
     if (@cache[office][device])
       @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
@@ -153,6 +154,7 @@ module.exports = (robot) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       console.log(msg)
       office = msg.match[1]
+      office = office.toLowerCase()
       device = msg.match[3]
       idd = msg.match[2]
       console.log(typeof(id))
@@ -163,36 +165,21 @@ module.exports = (robot) ->
 
   
   #remove admins here
-  '''
-  robot.respond /(.+) (has|have) (.+) (.+)/i, (msg) ->
-    person = msg.match[1]
-    if (person == 'i' | person == 'I')
-      person = '@' + msg.message.user.name
-    office = msg.match[3]
-    device = msg.match[4]
-    #msg.send tracker.add(office, device)
-    msg.send tracker.lend(office, device, person)
-  '''
   robot.respond /(.+) (has|have)\s?(the)?\s?(.+) (.+)/i, (msg) ->
     person = msg.match[1]
     if (person == 'i' | person == 'I')
       person = '@' + msg.message.user.name
     office = msg.match[4]
+    office = office.toLowerCase()
     device = msg.match[5]
     #msg.send tracker.add(office, device)
     msg.send tracker.lend(office, device, person)
 
 
-  robot.respond /(.+) returned (the|my) (.+) (.+)/i, (msg) ->
-    if (device_admins.indexOf(msg.message.user.name) >= 0)
-      office = msg.match[3]
-      device = msg.match[4]
-      device = device.toLowerCase() if lowercase_devices
-      msg.send tracker.return(office, device)
-
   robot.respond /return\s?(the|my)?\s?(.+) (.+)/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       office = msg.match[2]
+      office = office.toLowerCase()
       device = msg.match[3]
       device = device
       msg.send tracker.return(office, device)
@@ -218,7 +205,7 @@ module.exports = (robot) ->
         response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     msg.send response.join("\n")
 
-
+  
   robot.respond /storage delete (\w*)$/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       @robot.brain.remove(qa_device_tracker)
