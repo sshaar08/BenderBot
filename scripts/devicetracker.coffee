@@ -105,6 +105,9 @@ class QA_Device_Tracker
 
   lend: (office, device, person) ->
     response = "I don't know about the " + device
+    console.log(office)
+    console.log(device)
+
     if (@cache[office][device])
       @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
@@ -158,12 +161,22 @@ module.exports = (robot) ->
 
   
   #remove admins here
+  '''
   robot.respond /(.+) (has|have) (.+) (.+)/i, (msg) ->
     person = msg.match[1]
     if (person == 'i' | person == 'I')
       person = '@' + msg.message.user.name
     office = msg.match[3]
     device = msg.match[4]
+    #msg.send tracker.add(office, device)
+    msg.send tracker.lend(office, device, person)
+  '''
+  robot.respond /(.+) (has|have)\s?(the)?\s?(.+) (.+)/i, (msg) ->
+    person = msg.match[1]
+    if (person == 'i' | person == 'I')
+      person = '@' + msg.message.user.name
+    office = msg.match[4]
+    device = msg.match[5]
     #msg.send tracker.add(office, device)
     msg.send tracker.lend(office, device, person)
 
@@ -179,7 +192,6 @@ module.exports = (robot) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       office = msg.match[1]
       device = msg.match[2]
-      console.log(device)
       device = device
       msg.send tracker.return(office, device)
 
