@@ -105,10 +105,7 @@ class QA_Device_Tracker
 
   lend: (office, device, person) ->
     response = "I don't know about the " + device
-    console.log(office)
-    console.log(device)
     office = office.toLowerCase()
-    console.log(office)
     if (@cache[office][device])
       @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
@@ -124,8 +121,6 @@ class QA_Device_Tracker
 
   return: (office, device) ->
     response = "No device found"
-    console.log(office)
-    console.log(device)
     if (@cache[office][device])
       @cache[office][device]['location'] = "In the Vault"
       response = @cache[office][device]['Device_name'] + " is now safe at home with QA <3"
@@ -142,12 +137,23 @@ class QA_Device_Tracker
     k = if @cache[thing] then @cache[thing] else 0
     return k
 
+  get_brain: (thing) ->
+    #qa_device_tracker
+    k = robot.brain.get(thing) 
+    return k
+
+
 module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
   device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
+
+  robot.hear /get brain (.+)/i, (msg) ->
+    item = msg.match[1]
+    
+    msg.send tracker.get(item)
 
   #office, id, device, OS, MID, type  
   robot.respond /new device (.+) (.+) (.+) (.+) (.+) (.+)/i, (msg) ->
@@ -172,8 +178,12 @@ module.exports = (robot) ->
     office = msg.match[4]
     office = office.toLowerCase()
     device = msg.match[5]
-    #msg.send tracker.add(office, device)
-    msg.send tracker.lend(office, device, person)
+    if (device.search /,/ >= 0)
+      device_array = device.split "," 
+      for item in device_array
+        msg.send tracker.lend(office, item, person)
+    else
+      msg.send tracker.lend(office, device, person)
 
 
   robot.respond /return\s?(the|my)?\s?(.+) (.+)/i, (msg) ->
@@ -205,7 +215,7 @@ module.exports = (robot) ->
         response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     msg.send response.join("\n")
 
-  
+
   robot.respond /storage delete (\w*)$/i, (msg) ->
     if (device_admins.indexOf(msg.message.user.name) >= 0)
       @robot.brain.remove(qa_device_tracker)
