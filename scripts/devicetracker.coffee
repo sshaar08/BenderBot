@@ -191,8 +191,12 @@ module.exports = (robot) ->
       office = msg.match[2]
       office = office.toLowerCase()
       device = msg.match[3]
-      device = device
-      msg.send tracker.return(office, device)
+      if (device.search /,/ >= 0)
+        device_array = device.split "," 
+        for item in device_array
+          msg.send tracker.return(office, item)
+      else
+          msg.send tracker.return(office, device)
 
   
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
