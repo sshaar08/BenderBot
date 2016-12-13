@@ -147,7 +147,7 @@ module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
-  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar","j_liu", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
+  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar","j_liu", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
 
   robot.hear /get brain (.+)/i, (msg) ->
@@ -173,19 +173,23 @@ module.exports = (robot) ->
   #remove admins here
   robot.respond /(.+) (has|have)\s?(the)?\s?(.+) (.+)/i, (msg) ->
     person = msg.match[1]
-    if (person == 'i' | person == 'I')
-      person = '@' + msg.message.user.name
-    office = msg.match[4]
-    office = office.toLowerCase()
-    device = msg.match[5]
-    if (device.search /,/ >= 0)
-      device_array = device.split "," 
-      if (device_array.length >= 3)
-        msg.send "greedy!?"
-      for item in device_array
-        msg.send tracker.lend(office, item, person)
+    if (person == msg.message.user.name | (device_admins.indexOf(msg.message.user.name) >= 0) | person == 'I' | person == 'i')
+
+      if (person == 'i' | person == 'I')
+        person = '@' + msg.message.user.name
+      office = msg.match[4]
+      office = office.toLowerCase()
+      device = msg.match[5]
+      if (device.search /,/ >= 0)
+        device_array = device.split "," 
+        if (device_array.length >= 3)
+          msg.send "greedy!?"
+        for item in device_array
+          msg.send tracker.lend(office, item, person)
+      else
+        msg.send tracker.lend(office, device, person)
     else
-      msg.send tracker.lend(office, device, person)
+          msg.send "You're not Authorized to do that!, you can only checkout devices for yourself"
 
 
   robot.respond /return\s?(the|my)?\s?(.+) (.+)/i, (msg) ->
@@ -199,6 +203,9 @@ module.exports = (robot) ->
           msg.send tracker.return(office, item)
       else
           msg.send tracker.return(office, device)
+    else
+      msg.send "Please give it to one of the QA teammembers in your office for return, _Don't just place it on their desk_"
+
 
   
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
