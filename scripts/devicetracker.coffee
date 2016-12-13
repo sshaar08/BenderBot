@@ -50,7 +50,7 @@ class QA_Device_Tracker
       19 : { 'Device_name': 'iPad 4 with Retina Display.', 'OS Version': 'iOS 9.2.1', 'MID': 299264, 'location': '', 'type': 'IOS'},
       20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 8.4.1', 'MID': 385299, 'location': '', 'type': 'IOS'},
       21 : { 'Device_name': 'iPad 2', 'OS Version':  'iOS 8.4.1', 'MID': 298531, 'location': '', 'type': 'IOS'},
-      22 : { 'Device_name': 'iPad Air 2','OS Version': 'iOS 9.2.1', 'MID': 380758, 'location': '', 'type': 'IOS'},
+      22 : { 'Device_name': 'iPad Air 2 adamc','OS Version': 'iOS 9.2.1', 'MID': 380758, 'location': '', 'type': 'IOS'}, 
       23 : { 'Device_name': 'iPad Air 2','OS Version': 'iOS 9.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
       24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
       25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 9.3.1', 'MID': 311384, 'location': '', 'type': 'IOS'},
@@ -147,13 +147,13 @@ module.exports = (robot) ->
   tracker = new QA_Device_Tracker robot
   # Set device_admin to "Shell" for local environment
 
-  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
+  device_admins = process.env.HUBOT_DEVICE_ADMIN or ["sshaar","j_liu", "adamc", "andrew", "asha", "carolyn", "chris.manning", "james_park", "megan.mcnally", "pete.duff", "sara.tabor", "tristan.delgado", "laurentpierre", "cassiehaffner", "sammy", "Shell"]
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
 
   robot.hear /get brain (.+)/i, (msg) ->
     item = msg.match[1]
     
-    msg.send tracker.get(item)
+    msg.send tracker.get_brain(item)
 
   #office, id, device, OS, MID, type  
   robot.respond /new device (.+) (.+) (.+) (.+) (.+) (.+)/i, (msg) ->
@@ -180,6 +180,8 @@ module.exports = (robot) ->
     device = msg.match[5]
     if (device.search /,/ >= 0)
       device_array = device.split "," 
+      if (device_array.length >= 3)
+        msg.send "greedy!?"
       for item in device_array
         msg.send tracker.lend(office, item, person)
     else
