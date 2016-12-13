@@ -32,7 +32,7 @@ module.exports = (robot) ->
    robot.hear /\bkraken\b/, (res) ->
      res.send res.random kraken
 
-  #
+  
   # lulz = ['lol', 'rofl', 'lmao']
   #
   # robot.respond /lulz/i, (res) ->
