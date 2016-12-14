@@ -182,8 +182,8 @@ module.exports = (robot) ->
       device = msg.match[5]
       if (device.search /,/ >= 0)
         device_array = device.split "," 
-        if (device_array.length >= 3)
-          msg.send "greedy!?"
+        if (device_array.length >= 5)
+          msg.send "greedy!?... :D j/k"
         for item in device_array
           msg.send tracker.lend(office, item, person)
       else
