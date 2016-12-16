@@ -33,7 +33,7 @@ module.exports = (robot) ->
      res.send res.random kraken
   
 
-  hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
+   hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
    robot.hear /\hibiki\b/, (res) ->
      res.send res.random hibiki
 
@@ -109,7 +109,6 @@ module.exports = (robot) ->
   #
    robot.error (err, res) ->
      robot.logger.error "DOES NOT COMPUTE"
-  
      if res?
        res.reply "DOES NOT COMPUTE"
   
