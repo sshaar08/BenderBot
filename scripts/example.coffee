@@ -31,6 +31,11 @@ module.exports = (robot) ->
    kraken = ["http://giphy.com/gifs/animation-kraken-soDqW21ZbC1oc", "http://giphy.com/gifs/cephalopod-kraken-sorry-if-its-not-biology-enough-rGoyx8v1AgWbe"]
    robot.hear /\bkraken\b/, (res) ->
      res.send res.random kraken
+  
+
+  hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
+   robot.hear /\hibiki\b/, (res) ->
+     res.send res.random hibiki
 
   
   # lulz = ['lol', 'rofl', 'lmao']
@@ -102,12 +107,12 @@ module.exports = (robot) ->
   #
   #   res.send 'OK'
   #
-  # robot.error (err, res) ->
-  #   robot.logger.error "DOES NOT COMPUTE"
-  #
-  #   if res?
-  #     res.reply "DOES NOT COMPUTE"
-  #
+   robot.error (err, res) ->
+     robot.logger.error "DOES NOT COMPUTE"
+  
+     if res?
+       res.reply "DOES NOT COMPUTE"
+  
   # robot.respond /have a soda/i, (res) ->
   #   # Get number of sodas had (coerced to a number).
   #   sodasHad = robot.brain.get('totalSodas') * 1 or 0
