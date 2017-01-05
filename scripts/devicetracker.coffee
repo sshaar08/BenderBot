@@ -104,12 +104,13 @@ class QA_Device_Tracker
     response
 
   lend: (office, device, person) ->
+    repsonseArray = [". Good luck, please don't break it!", ". Please return it when you're done!", ". abc", ". efg"]
     response = "I don't know about the " + device
     office = office.toLowerCase()
     if (@cache[office][device])
       @cache[office][device]['location'] = person
       @robot.brain.data.qa_device_tracker = @cache
-      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + ". please return it when you're done!"
+      response = @cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + repsonseArray[Math.floor((Math.random() * repsonseArray.length))]
     response
     
   list: -> 
