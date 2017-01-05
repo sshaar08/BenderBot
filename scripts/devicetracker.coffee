@@ -31,8 +31,8 @@ class QA_Device_Tracker
     @cache = {
     'ny' : {
       1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', 'MID': 4327902, 'location': '', 'type': 'IOS'}, 
-      2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.2.1', 'MID': 4327898, 'location': '', 'type': 'IOS'},
-      3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 9.2', 'MID': 4391133, 'location': '', 'type': 'IOS'},
+      2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.3.4', 'MID': 4327898, 'location': '', 'type': 'IOS'},
+      3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 10.2', 'MID': 4391133, 'location': '', 'type': 'IOS'},
       4 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 7.0.3', 'MID': 4296522, 'location': '', 'type': 'IOS'},
       5 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4296451, 'location': '', 'type': 'IOS'},
       6 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4311041, 'location': '', 'type': 'IOS'},
@@ -67,7 +67,7 @@ class QA_Device_Tracker
       36 : { 'Device_name': 'Samsung Galaxy Tab 10.1','OS Version':  '4.0.4 Ice Cream Sandwich', 'MID': 299257, 'location': '', 'type' : 'Android'},
       37 : { 'Device_name': 'Samsung Galaxy Tab 7.0 Plus', 'OS Version': '4.0.4 Ice Cream Sandwich', 'MID': 296553, 'location': '', 'type' : 'Android' }
       38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'IOS'}, 
-      39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'IOS'}, 
+      39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 10.2', 'MID': '', 'location': '', 'type': 'IOS'}, 
       40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '6.0.1', 'MID': 414091, 'location': '', 'type': 'Android'},
       41 : { 'Device_name' : 'Samsung Galaxy S5', 'OS Version': '', 'MID': ' ', 'location': '', 'type': 'Android'}, 
       42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
