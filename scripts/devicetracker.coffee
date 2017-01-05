@@ -104,7 +104,7 @@ class QA_Device_Tracker
     response
 
   lend: (office, device, person) ->
-    repsonseArray = [". Good luck, please don't break it!", ". Please return it when you're done!", ". abc", ". efg"]
+    repsonseArray = [". Good luck, please don't break it!", ". Please return it when you're done!", ". You better not update this device! Return when finished, please.", ". You update it you bought it! Be sure to return it, please."]
     response = "I don't know about the " + device
     office = office.toLowerCase()
     if (@cache[office][device])
