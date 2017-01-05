@@ -69,7 +69,21 @@ module.exports = (robot) ->
        res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
        return
      res.send res.random answer_to_uq
+   
+   robot.hear /random (.+) (.+)/i, (res) ->
+    #(.+) (.+) (.+)
+    #max = 6
+    #min = 0
+    max = res.match[1]
+    min = res.match[2]
+    console.log('max': max)
+    console.log('min': min)
 
+    #repeat = msg.match[3]
+    #console.log(repeat)
+    #console.log(message)  
+    message = Math.floor((Math.random() * (max - min)) + min)
+    res.send message
 
   #
   # robot.respond /you are a little slow/, (res) ->

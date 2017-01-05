@@ -142,6 +142,11 @@ class QA_Device_Tracker
     #qa_device_tracker
     k = robot.brain.get(thing) 
     return k
+  
+  random_int: (max, min) ->
+    int = Math.floor((Math.random() * (max - min)) + min)
+    return int
+
 
 
 module.exports = (robot) ->
