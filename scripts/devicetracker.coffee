@@ -121,9 +121,9 @@ class QA_Device_Tracker
               redismem[office][device] = {}
               redismem[office][device]['Device_name'] = @cache[office][device]['Device_name']
               redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
-              redismem[office][device]['MID'] = @cache[office][office]['MID']
+              redismem[office][device]['MID'] = @cache[office][device]['MID']
               redismem[office][device]['location'] = "The Vault"
-              redismem[office][device]['type'] = @cache[office][office]['type']
+              redismem[office][device]['type'] = @cache[office][device]['type']
               console.log("Ill be keeping track of the #{office} #{device} for you.")
         @cache = @robot.brain.data.qa_device_tracker
 
