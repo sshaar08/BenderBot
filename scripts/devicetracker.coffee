@@ -111,11 +111,12 @@ class QA_Device_Tracker
         for office of @cache
           console.log(office)
           for device in @cache[office]
+            console.log("checking #{office} #{device}")
             if (redismem[office][device])
+              console.log("exists in redis")
               @cache[office][device]['location'] = redismem[office][device]['location']
             else
               console.log("new device #{office} #{device}")
-              console.log @cache
               redismem[office][device] = {}
               redismem[office][device]['Device_name'] = @cache[office][device]['Device_name']
               redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
