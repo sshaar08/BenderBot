@@ -114,6 +114,7 @@ class QA_Device_Tracker
             if (redismem[office][device])
               @cache[office][device]['location'] = redismem[office][device]['location']
             else
+              console.log('new device #{office} #{device}')
               redismem[office][device] = {}
               redismem[office][device]['Device_name'] = @cache[office][device]['Device_name']
               redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
