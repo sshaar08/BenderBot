@@ -110,7 +110,8 @@ class QA_Device_Tracker
         #console.log(@robot.brain.data.qa_device_tracker)
         for office, devices of @cache
           console.log(office)
-          for device in devices
+          for device, dict of devices
+          #for device in devices
             console.log("checking #{office} #{device}")
             if (redismem[office][device])
               console.log("exists in redis")
