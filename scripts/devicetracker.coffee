@@ -110,19 +110,17 @@ class QA_Device_Tracker
         #console.log(@robot.brain.data.qa_device_tracker)
         for office of @cache
           console.log(office)
-          for device in office:
+          for device in office
             if (redismem[office][device])
               @cache[office][device]['location'] = redismem[office][device]['location']
             else
-              redismem[office][id] = {}
-              redismem[office][id]['Device_name'] = @cache[office][id]['Device_name']
-              redismem[office][id]['OS Version'] = @cache[office][id]['OS Version']
-              redismem[office][id]['MID'] = @cache[office][id]['MID']
-              redismem[office][id]['location'] = "The Vault"
-              redismem[office][id]['type'] = @cache[office][id]['type']
-              console.log('Ill be keeping track of the' + #{office} + 'id ' + #{id} +' Device_name ' + #{device} + ' OS Version ' + #{OS} + ' MID ' + #{MID}  + ' location ' + 'The Vault' + 'type' + #{type} + " for you.")
-                
-
+              redismem[office][device] = {}
+              redismem[office][device]['Device_name'] = @cache[office][device]['Device_name']
+              redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
+              redismem[office][device]['MID'] = @cache[office][id]['MID']
+              redismem[office][device]['location'] = "The Vault"
+              redismem[office][device]['type'] = @cache[office][id]['type']
+              console.log('Ill be keeping track of the #{office} #{id} for you.')
         @cache = @robot.brain.data.qa_device_tracker
 
   add: (office, id, device, OS, MID, type) ->
@@ -260,7 +258,7 @@ module.exports = (robot) ->
       else
         msg.send tracker.lend(office, device, person)
     else
-          msg.send "You're not Authorized to do that!, you can only checkout devices for yourself"
+      msg.send "You're not Authorized to do that!, you can only checkout devices for yourself"
 
 
   robot.respond /return\s?(the|my)?\s?(.+) (.+)/i, (msg) ->
@@ -273,7 +271,7 @@ module.exports = (robot) ->
         for item in device_array
           msg.send tracker.return(office, item)
       else
-          msg.send tracker.return(office, device)
+        msg.send tracker.return(office, device)
     else
       msg.send "Please give it to one of the QA teammembers in your office for return, _Don't just place it on their desk_"
 
