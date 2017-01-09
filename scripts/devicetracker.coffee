@@ -110,7 +110,7 @@ class QA_Device_Tracker
         #console.log(@robot.brain.data.qa_device_tracker)
         for office of @cache
           console.log(office)
-          for device in office
+          for device in @cache[office]
             if (redismem[office][device])
               @cache[office][device]['location'] = redismem[office][device]['location']
             else
