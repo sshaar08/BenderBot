@@ -106,9 +106,22 @@ class QA_Device_Tracker
     @robot.brain.on 'loaded', =>
       if @robot.brain.data.qa_device_tracker
         console.log('Loading from Brain')
+        redismem = @robot.brain.data.qa_device_tracker
         #console.log(@robot.brain.data.qa_device_tracker)
-        for key, device of @robot.brain.data.qa_device_tracker
-          console.log(key)
+        for office of @cache
+          console.log(office)
+          for device in office:
+            if (redismem[office][device])
+              @cache[office][device]['location'] = redismem[office][device]['location']
+            else
+              redismem[office][id] = {}
+              redismem[office][id]['Device_name'] = @cache[office][id]['Device_name']
+              redismem[office][id]['OS Version'] = @cache[office][id]['OS Version']
+              redismem[office][id]['MID'] = @cache[office][id]['MID']
+              redismem[office][id]['location'] = "The Vault"
+              redismem[office][id]['type'] = @cache[office][id]['type']
+              console.log('Ill be keeping track of the' + #{office} + 'id ' + #{id} +' Device_name ' + #{device} + ' OS Version ' + #{OS} + ' MID ' + #{MID}  + ' location ' + 'The Vault' + 'type' + #{type} + " for you."
+                
 
         @cache = @robot.brain.data.qa_device_tracker
 
