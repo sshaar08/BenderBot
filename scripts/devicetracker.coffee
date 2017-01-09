@@ -114,14 +114,14 @@ class QA_Device_Tracker
             if (redismem[office][device])
               @cache[office][device]['location'] = redismem[office][device]['location']
             else
-              console.log('new device #{office} #{device}')
+              console.log("new device #{office} #{device}")
               redismem[office][device] = {}
               redismem[office][device]['Device_name'] = @cache[office][device]['Device_name']
               redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
               redismem[office][device]['MID'] = @cache[office][id]['MID']
               redismem[office][device]['location'] = "The Vault"
               redismem[office][device]['type'] = @cache[office][id]['type']
-              console.log('Ill be keeping track of the #{office} #{id} for you.')
+              console.log("Ill be keeping track of the #{office} #{id} for you.")
         @cache = @robot.brain.data.qa_device_tracker
 
   add: (office, id, device, OS, MID, type) ->
