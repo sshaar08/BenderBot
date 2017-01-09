@@ -108,7 +108,7 @@ class QA_Device_Tracker
         console.log('Loading from Brain')
         redismem = @robot.brain.data.qa_device_tracker
         #console.log(@robot.brain.data.qa_device_tracker)
-        for office, devices of @cache
+        for office, devices in @cache
           console.log(office)
           for device in devices
             console.log("checking #{office} #{device}")
