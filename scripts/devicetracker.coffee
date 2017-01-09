@@ -106,6 +106,7 @@ class QA_Device_Tracker
     @robot.brain.on 'loaded', =>
       if @robot.brain.data.qa_device_tracker
         console.log('Loading from Brain')
+        console.log(@robot.brain.data.qa_device_tracker)
         @cache = @robot.brain.data.qa_device_tracker
 
   add: (office, id, device, OS, MID, type) ->
