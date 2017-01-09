@@ -66,8 +66,30 @@ class QA_Device_Tracker
         
         },
       'sf': {
-        18 : { 'Device_name': 'Apple Watch', 'OS Version': '', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
-        29 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
+        1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        2: {'Device_name': 'iPod Touch 5th Gen', 'OS Version': 'iOS 7.0.4', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        3: {'Device_name': 'iPhone 6', 'OS Version': 'iOS 10.1.1', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        4: {'Device_name': 'iPhone 6+', 'OS Version': 'iOS 10.0.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        5: {'Device_name': 'iPhone 6s', 'OS Version': 'iOS 9.3.1', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        6: {'Device_name': 'iPhone 6s+', 'OS Version': 'iOS 10.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        7: {'Device_name': 'iPhone 7', 'OS Version': 'iOS 10.0.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        8: {'Device_name': 'Galaxy S Advance', 'OS Version': '2.3.6 Gingerbread', 'MID': 'N/A', 'locaion': '', 'type': 'Android'},
+        9: {'Device_name': 'Galaxy Nexus  Android 4.1.1 Jellybean', 'MID': 'N/A', 'locaion': '', 'type': 'Android'},
+        10: {'Device_name': 'Samsung Galaxy S7 Edge', 'OS Version': '6.0.1 Marshmallow', 'MID': 'N/A', 'locaion': '', 'type': 'Android'},
+        11: {'Device_name': 'Blackberry Q10', 'OS Version': '10.1.0.2011', 'MID': 'N/A', 'locaion': '', 'type': 'N/A'},
+        12: {'Device_name': 'Blackberry Z10', 'OS Version': '10.1.0.2019', 'MID': 'N/A', 'locaion': '', 'type': 'N/A'},
+        13: {'Device_name': 'iPad 1', 'OS Version': 'iOS 5.1.1', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        14: {'Device_name': 'iPad 2', 'OS Version': 'iOS 8.1.3', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        15: {'Device_name': 'iPad 3', 'OS Version': 'iOS 7.1.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        16: {'Device_name': 'iPad Air 1', 'OS Version': 'iOS 9.3.1', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        17: {'Device_name': 'iPad Air 2', 'OS Version': 'iOS 10.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        18: {'Device_name': 'iPad Pro', 'OS Version': 'iOS 10.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        19: {'Device_name': 'iPad Mini 4', 'OS Version': 'iOS 10.2', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
+        20: {'Device_name': 'Samsung Galaxy Tab S2', 'OS Version': '6.0.1 Marshmellow', 'MID': 'N/A', 'locaion': '', 'type': 'Android'},
+        21: {'Device_name': 'Nexus 7', 'OS Version': '6.0.1 Marshmallow', 'MID': 'N/A', 'locaion': '', 'type': 'Android'},
+        22: {'Device_name': 'Motorola Xoom', 'OS Version': '4.0.4 Ice Cream Sandwich', 'MID': 'N/A', 'locaion': '', 'type': 'Android'},
+        23: {'Device_name': 'Apple Watch', 'OS Version': '', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
+        24: {'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
 
         },
       'missing': {
@@ -106,7 +128,27 @@ class QA_Device_Tracker
     @robot.brain.on 'loaded', =>
       if @robot.brain.data.qa_device_tracker
         console.log('Loading from Brain')
-        console.log(@robot.brain.data.qa_device_tracker)
+        redismem = @robot.brain.data.qa_device_tracker
+        #console.log(@robot.brain.data.qa_device_tracker)
+        for office, devices of @cache
+          console.log(office)
+          if (!redismem[office])
+            redismem[office] = {}
+          for device, dict of devices
+          #for device in devices
+            console.log("checking #{office} #{device}")
+            if (redismem[office][device])
+              console.log("exists in redis")
+              @cache[office][device]['location'] = redismem[office][device]['location']
+            else
+              console.log("new device #{office} #{device}")
+              redismem[office][device] = {}
+              redismem[office][device]['Device_name'] = @cache[office][device]['Device_name']
+              redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
+              redismem[office][device]['MID'] = @cache[office][device]['MID']
+              redismem[office][device]['location'] = "The Vault"
+              redismem[office][device]['type'] = @cache[office][device]['type']
+              console.log("Ill be keeping track of the #{office} #{device} for you.")
         @cache = @robot.brain.data.qa_device_tracker
 
   add: (office, id, device, OS, MID, type) ->
@@ -244,7 +286,7 @@ module.exports = (robot) ->
       else
         msg.send tracker.lend(office, device, person)
     else
-          msg.send "You're not Authorized to do that!, you can only checkout devices for yourself"
+      msg.send "You're not Authorized to do that!, you can only checkout devices for yourself"
 
 
   robot.respond /return\s?(the|my)?\s?(.+) (.+)/i, (msg) ->
@@ -257,7 +299,7 @@ module.exports = (robot) ->
         for item in device_array
           msg.send tracker.return(office, item)
       else
-          msg.send tracker.return(office, device)
+        msg.send tracker.return(office, device)
     else
       msg.send "Please give it to one of the QA teammembers in your office for return, _Don't just place it on their desk_"
 
