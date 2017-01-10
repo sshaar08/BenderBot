@@ -34,16 +34,11 @@ class QA_Device_Tracker
         2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.3.4', 'MID': 4327898, 'location': '', 'type': 'IOS'},
         3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 10.2', 'MID': 4391133, 'location': '', 'type': 'IOS'},
         4 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 7.0.3', 'MID': 4296522, 'location': '', 'type': 'IOS'},
-        6 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4311041, 'location': '', 'type': 'IOS'},
-        7 : { 'Device_name': 'Samsung Galaxy S4', 'OS Version':  '4.4.2 KitKat', 'MID': 4298544, 'location': '', 'type' : 'Android'},
-        8 : { 'Device_name': 'Samsung Galaxy S4', 'OS Version':  '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         9 : { 'Device_name': 'Samsung Galaxy S5', 'OS Version':  '4.4.4 KitKat', 'MID': 362257, 'location': '', 'type' : 'Android'},
         10 : { 'Device_name': 'Samsung Galaxy S6', 'OS Version':  '6.0.1', 'MID': 380531, 'location': '', 'type' : 'Android'},
         12 : { 'Device_name': 'Samsung Galaxy S6 edge', 'OS Version': '6.0.1', 'MID': 359812, 'location': '', 'type' : 'Android'},
         13 : { 'Device_name': 'Nexus 4', 'OS Version': '5.1.1', 'MID': 299266, 'location': '', 'type' : 'Android'},
         14 : { 'Device_name': 'Samsung Galaxy Nexus', 'OS Version': '4.1.1 Jelly Bean', 'MID': 296535, 'location': '', 'type' : 'Android'},
-        15 : { 'Device_name': 'Samsung Galaxy S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
-        16 : { 'Device_name': 'HTC Inspire 4G', 'OS Version': '2.3.3 Gingerbread', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         19 : { 'Device_name': 'iPad 4 with Retina Display.', 'OS Version': 'iOS 9.2.1', 'MID': 299264, 'location': '', 'type': 'IOS'},
         20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 8.4.1', 'MID': 385299, 'location': '', 'type': 'IOS'},
         22 : { 'Device_name': 'iPad Air 2 adamc','OS Version': 'iOS 9.2.1', 'MID': 380758, 'location': '', 'type': 'IOS'}, 
@@ -51,10 +46,7 @@ class QA_Device_Tracker
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
-        30 : { 'Device_name': 'Samsung Galaxy Tab 4', 'OS Version':  '5.0.2', 'MID': 380756, 'location': '', 'type' : 'Android'},
-        31 : { 'Device_name': 'Samsung Galaxy Tab 4 (7 inch)', 'OS Version': '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         33 : { 'Device_name': 'Nexus 7', 'OS Version': '4.4.2 KitKat', 'MID': 296529, 'location': '', 'type' : 'Android'},
-        32 : { 'Device_name': 'Samsung Galaxy Tab 3 (Sirius)', 'OS Version': '4.2.2 Jelly Bean', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         34 : { 'Device_name': 'Nexus 7', 'OS Version': '4.2 Jelly Bean', 'MID': 296530, 'location': '', 'type' : 'Android'},
         35 : { 'Device_name': 'Nexus 10','OS Version': '5.1.1 Lollipop', 'MID': 238749, 'location': '', 'type' : 'Android'},
         38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 10.1', 'MID': '', 'location': '', 'type': 'IOS'}, 
@@ -92,7 +84,7 @@ class QA_Device_Tracker
         24: {'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
 
         },
-      'missing': {
+      'missing_ny': {
         5 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4296451, 'location': '', 'type': 'IOS'},
         21 : { 'Device_name': 'iPad 2', 'OS Version':  'iOS 8.4.1', 'MID': 298531, 'location': '', 'type': 'IOS'},
         23 : { 'Device_name': 'iPad Air 2','OS Version': 'iOS 9.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
@@ -122,6 +114,16 @@ class QA_Device_Tracker
         16 : { 'Device_name': 'Galaxy Tab 4', 'OS Version': '5.0.2 (Lollipop)', 'MID': 602919400114275477, 'location': '', 'type': 'Android'},
         17 : { 'Device_name': 'Galaxy Tab S2', 'OS Version': '', 'MID': 'N/A', 'location': '', 'type': 'Android'},
         18 : { 'Device_name': 'Kindle Fire HD', 'OS Version': '7.5.1', 'MID': 'N/A', 'location': '', 'type': 'Android'},
+        },
+      'removed_ny' : {
+        6 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4311041, 'location': '', 'type': 'IOS'},
+        7 : { 'Device_name': 'Samsung Galaxy S4', 'OS Version':  '4.4.2 KitKat', 'MID': 4298544, 'location': '', 'type' : 'Android'},
+        8 : { 'Device_name': 'Samsung Galaxy S4', 'OS Version':  '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
+        15 : { 'Device_name': 'Samsung Galaxy S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
+        16 : { 'Device_name': 'HTC Inspire 4G', 'OS Version': '2.3.3 Gingerbread', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
+        30 : { 'Device_name': 'Samsung Galaxy Tab 4', 'OS Version':  '5.0.2', 'MID': 380756, 'location': '', 'type' : 'Android'},
+        31 : { 'Device_name': 'Samsung Galaxy Tab 4 (7 inch)', 'OS Version': '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
+        32 : { 'Device_name': 'Samsung Galaxy Tab 3 (Sirius)', 'OS Version': '4.2.2 Jelly Bean', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         },
       }
 
@@ -167,10 +169,14 @@ class QA_Device_Tracker
 
   remove: (office, device) ->
     response = "What is this " + office + device + " that you're talking about..."
+    of_removed = ""
     if @cache[office][device]
       delete @cache[office][device]
+      if @cache[office] == {}
+        delete @cache[office]
+        of_removed = 'removed office too'
       @robot.brain.data.qa_device_tracker = @cache
-      response = "Cya, " + office + device
+      response = "Cya, " + office + device + of_removed
     response
 
   lend: (office, device, person) ->
