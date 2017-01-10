@@ -125,9 +125,6 @@ class QA_Device_Tracker
         31 : { 'Device_name': 'Samsung Galaxy Tab 4 (7 inch)', 'OS Version': '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         32 : { 'Device_name': 'Samsung Galaxy Tab 3 (Sirius)', 'OS Version': '4.2.2 Jelly Bean', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         },
-      'test' : {
-        1 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4311041, 'location': '', 'type': 'IOS'},
-        },
       }
 
     @robot.brain.on 'loaded', =>
