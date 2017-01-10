@@ -165,12 +165,12 @@ class QA_Device_Tracker
       @robot.brain.data.qa_device_tracker = @cache
     response
 
-  remove: (device) ->
-    response = "What is this " + device + " that you're talking about..."
-    if @cache[device]
-      delete @cache[device]
+  remove: (office, device) ->
+    response = "What is this " + office + device + " that you're talking about..."
+    if @cache[office][device]
+      delete @cache[office][device]
       @robot.brain.data.qa_device_tracker = @cache
-      response = "Cya, " + device
+      response = "Cya, " + office + device
     response
 
   lend: (office, device, person) ->
@@ -210,7 +210,7 @@ class QA_Device_Tracker
 
   get_brain: (thing) ->
     #qa_device_tracker
-    k = robot.brain.get(thing) 
+    k = @robot.brain.get(thing) 
     return k
   
   random_int: (max, min) ->
@@ -251,6 +251,12 @@ module.exports = (robot) ->
     item = msg.match[1]
     
     msg.send tracker.get_brain(item)
+
+  robot.hear /device delete (.+) (.+)/i, (msg) ->
+    if (msg.message.user.name in ['Shell', 'sshaar'])
+      office = msg.match[1]
+      device = msg.match[2]
+      msg.send tracker.remove(office, device)
 
   #office, id, device, OS, MID, type  
   robot.respond /new device (.+) (.+) (.+) (.+) (.+) (.+)/i, (msg) ->
@@ -305,10 +311,11 @@ module.exports = (robot) ->
 
 
   
-  robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
+  robot.respond /(list (.+) device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
     response = ["Tracked QA devices:"]
     for office, num in tracker.list()
-      response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
+      if ("#{office.office}" == msg.match[2])
+        response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     msg.send response.join("\n")
 
   robot.respond /(list android device(s)?)/i, (msg) ->
