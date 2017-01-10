@@ -133,14 +133,13 @@ class QA_Device_Tracker
         redismem = @robot.brain.data.qa_device_tracker
         #console.log(@robot.brain.data.qa_device_tracker)
         for office, devices of @cache
-          console.log(office)
+          if (redismem[office]== {})
+            delete redismem[office]
+            console.log("removed", office)
           if (!redismem[office])
             redismem[office] = {}
           for device, dict of devices
-          #for device in devices
-            console.log("checking #{office} #{device}")
             if (redismem[office][device])
-              console.log("exists in redis")
               @cache[office][device]['location'] = redismem[office][device]['location']
             else
               console.log("new device #{office} #{device}")
