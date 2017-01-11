@@ -327,18 +327,25 @@ module.exports = (robot) ->
         response = ['No devices for that office. Try ny, sf, mnl']   
     msg.send response.join("\n")
 
-  robot.respond /(list android device(s)?)/i, (msg) ->
+  robot.respond /(list (.+) android device(s)?)/i, (msg) ->
     response = ["Tracked QA Android devices:"]
+    
     for office, num in tracker.list()
-      if ("#{office.type}" == 'Android') 
-        response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
+      if ("#{office.office}" == msg.match[2].toLowerCase())
+        if ("#{office.type}" == 'Android') 
+          response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
+    if (response.length == 1)  
+        response = ['No devices for that office. Try ny, sf, mnl']   
     msg.send response.join("\n")
   
-  robot.respond /(list ios device(s)?)/i, (msg) ->
+  robot.respond /(list (.+) ios device(s)?)/i, (msg) ->
     response = ["Tracked QA IOS devices:"]
     for office, num in tracker.list()
-      if ("#{office.type}" == 'IOS') 
-        response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
+      if ("#{office.office}" == msg.match[2].toLowerCase())
+        if ("#{office.type}" == 'IOS') 
+          response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
+    if (response.length == 1)  
+        response = ['No devices for that office. Try ny, sf, mnl']   
     msg.send response.join("\n")
 
 
