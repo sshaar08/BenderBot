@@ -332,7 +332,7 @@ module.exports = (robot) ->
     response = ["Tracked QA Android devices:"]
     for office, num in tracker.list()
       if ("#{office.office}" == msg.match[2].toLowerCase())
-        if ("#{office.type}" == 'IOS') 
+        if ("#{office.type}" == 'Android') 
           response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     
     if (response.length == 1)  
