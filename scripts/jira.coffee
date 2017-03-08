@@ -15,13 +15,13 @@
 #   HUBOT_JIRA_IGNOREUSERS
 #
 # Commands:
-#   <Project Key>-<Issue ID> - Displays information about the JIRA ticket (if it exists)
-#   hubot show watchers for <Issue Key> - Shows watchers for the given JIRA issue
-#   hubot search for <JQL> - Search JIRA with JQL
-#   hubot save filter <JQL> as <name> - Save JIRA JQL query as filter in the brain
-#   hubot use filter <name> - Use a JIRA filter from the brain
-#   hubot show filter(s) - Show all JIRA filters
-#   hubot show filter <name> - Show a specific JIRA filter
+#   <Project Key>-<Issue ID> - Displays information about the JIRA ticket (if it exists) [jira]
+#   hubot show watchers for <Issue Key> - Shows watchers for the given JIRA issue [jira]
+#   hubot search for <JQL> - Search JIRA with JQL [jira]
+#   hubot save filter <JQL> as <name> - Save JIRA JQL query as filter in the brain [jira]
+#   hubot use filter <name> - Use a JIRA filter from the brain [jira]
+#   hubot show filter(s) - Show all JIRA filters [jira]
+#   hubot show filter <name> - Show a specific JIRA filter [jira]
 #
 # Author:
 #   codec

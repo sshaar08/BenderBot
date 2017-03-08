@@ -8,8 +8,8 @@
 #   None
 #
 # Commands:
-#   hubot walmart me - Show random Walmart image
-#   hubot walmart ban - Remove NSFW Walmart image URL (lol)
+#   hubot walmart me - Show random Walmart image [walmart]
+#   hubot walmart ban - Remove NSFW Walmart image URL (lol) [walmart]
 #
 # Author:
 #   kevinsawicki
