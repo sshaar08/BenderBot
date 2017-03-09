@@ -32,6 +32,14 @@ module.exports = (robot) ->
    robot.hear /\bkraken\b/, (res) ->
      res.send res.random kraken
   
+   spam = [
+    "https://www.photoshopgurus.com/forum/attachments/off-topic-games-discussions-etc-/3841d1305812606t-spam-wars-spamwithfrog-gif",
+    "https://regmedia.co.uk/2015/05/01/spam_wall.jpg?x=648&y=348&crop=1",
+    "https://i.ytimg.com/vi/FyhJKRTsgMU/maxresdefault.jpg",
+   ]
+   robot.respond /\bspam\b/, (res) ->
+     res.send res.random spam
+  
 
    hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
    robot.hear /\hibiki\b/, (res) ->
