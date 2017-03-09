@@ -320,11 +320,8 @@ module.exports = (robot) ->
 
 
   
-<<<<<<< HEAD
+
   robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my stuff)|qa stuff)/i, (msg) ->
-=======
-  robot.respond /(list (.+) device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
->>>>>>> master
     response = ["Tracked QA devices:"]
     for office, num in tracker.list()
       if (office != undefined)
