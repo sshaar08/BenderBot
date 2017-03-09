@@ -40,6 +40,7 @@ module.exports = (robot) ->
     "https://s-media-cache-ak0.pinimg.com/736x/71/47/98/714798406995543583da89a5fd9c5402.jpg",
     "https://s-media-cache-ak0.pinimg.com/originals/16/4d/e1/164de15b43dc5cf85717b15698de68fb.jpg",
     "http://file.vintageadbrowser.com/l-45njutdpldm8j5.jpg",
+    "https://s-media-cache-ak0.pinimg.com/236x/9d/72/33/9d7233b334db555c50dcea930f32e7a1.jpg",
 
    ]
    robot.respond /\bspam\b/, (res) ->
@@ -49,8 +50,15 @@ module.exports = (robot) ->
    hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
    robot.hear /\hibiki\b/, (res) ->
      res.send res.random hibiki
+   
 
+   james = ["https://goo.gl/photos/UT6p8AqT5wiDP7vp7"]
+   robot.hear /@james_park *.* (coconut|water)/i, (res) ->
+     res.send res.random james
   
+
+  #
+
   # lulz = ['lol', 'rofl', 'lmao']
   #
   # robot.respond /lulz/i, (res) ->
