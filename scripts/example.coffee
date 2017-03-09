@@ -36,6 +36,11 @@ module.exports = (robot) ->
     "https://www.photoshopgurus.com/forum/attachments/off-topic-games-discussions-etc-/3841d1305812606t-spam-wars-spamwithfrog-gif",
     "https://regmedia.co.uk/2015/05/01/spam_wall.jpg?x=648&y=348&crop=1",
     "https://i.ytimg.com/vi/FyhJKRTsgMU/maxresdefault.jpg",
+    "https://s-media-cache-ak0.pinimg.com/originals/42/58/bf/4258bf6b2ca921185ce8e613a8df37ea.jpg",
+    "https://s-media-cache-ak0.pinimg.com/736x/71/47/98/714798406995543583da89a5fd9c5402.jpg",
+    "https://s-media-cache-ak0.pinimg.com/originals/16/4d/e1/164de15b43dc5cf85717b15698de68fb.jpg",
+    "http://file.vintageadbrowser.com/l-45njutdpldm8j5.jpg",
+
    ]
    robot.respond /\bspam\b/, (res) ->
      res.send res.random spam
