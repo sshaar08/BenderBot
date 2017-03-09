@@ -18,7 +18,9 @@
     "hubot-scripts": "^2.16.2",
     "hubot-sentiment": "^1.2.7",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^3.4.1"
+    "hubot-slack": "^3.4.1",
+    "redis-cli": "1.0.2", 
+    "redis-dump": "0.1.10"
   },
   "engines": {
     "node": "0.12.7"

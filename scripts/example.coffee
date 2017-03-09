@@ -12,13 +12,7 @@ module.exports = (robot) ->
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-
-   robot.respond /ECHO (.*)$/i, (msg) ->
-     msg.send msg.match[1]
-
-   robot.respond /TIME$/i, (msg) ->
-     msg.send "Server time is: #{new Date()}"
-
+   
    robot.respond /DIE$/i, (msg) ->
      msg.send "Goodbye, cruel world."
      process.exit 0
@@ -37,8 +31,13 @@ module.exports = (robot) ->
    kraken = ["http://giphy.com/gifs/animation-kraken-soDqW21ZbC1oc", "http://giphy.com/gifs/cephalopod-kraken-sorry-if-its-not-biology-enough-rGoyx8v1AgWbe"]
    robot.hear /\bkraken\b/, (res) ->
      res.send res.random kraken
+  
 
-  #
+   hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
+   robot.hear /\hibiki\b/, (res) ->
+     res.send res.random hibiki
+
+  
   # lulz = ['lol', 'rofl', 'lmao']
   #
   # robot.respond /lulz/i, (res) ->
@@ -70,7 +69,21 @@ module.exports = (robot) ->
        res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
        return
      res.send res.random answer_to_uq
+   
+   robot.hear /random (.+) (.+)/i, (res) ->
+    #(.+) (.+) (.+)
+    #max = 6
+    #min = 0
+    max = res.match[1]
+    min = res.match[2]
+    console.log('max': max)
+    console.log('min': min)
 
+    #repeat = msg.match[3]
+    #console.log(repeat)
+    #console.log(message)  
+    message = Math.floor((Math.random() * (max - min)) + min)
+    res.send message
 
   #
   # robot.respond /you are a little slow/, (res) ->
@@ -108,12 +121,11 @@ module.exports = (robot) ->
   #
   #   res.send 'OK'
   #
-  # robot.error (err, res) ->
-  #   robot.logger.error "DOES NOT COMPUTE"
-  #
-  #   if res?
-  #     res.reply "DOES NOT COMPUTE"
-  #
+   robot.error (err, res) ->
+     robot.logger.error "DOES NOT COMPUTE"
+     if res?
+       res.reply "DOES NOT COMPUTE"
+  
   # robot.respond /have a soda/i, (res) ->
   #   # Get number of sodas had (coerced to a number).
   #   sodasHad = robot.brain.get('totalSodas') * 1 or 0

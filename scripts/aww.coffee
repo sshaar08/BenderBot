@@ -18,7 +18,7 @@ url = require("url")
 module.exports = (robot) ->
   robot.respond /aww/i, (msg) ->
     search = escape(msg.match[1])
-    msg.http('http://www.reddit.com/r/aww.json')
+    msg.http('https://www.reddit.com/r/aww.json')
       .get() (err, res, body) ->
         result = JSON.parse(body)
 
@@ -26,6 +26,7 @@ module.exports = (robot) ->
         for child in result.data.children
           if child.data.domain != "self.aww"
             urls.push(child.data.url)
+
 
         if urls.count <= 0
           msg.send "Couldn't find anything cute..."
