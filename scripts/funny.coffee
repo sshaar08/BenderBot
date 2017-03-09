@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot funny
+#   hubot <funny> Pulls a random link from from the following reddit group: http://www.reddit.com/r/funny.json [funny]
 #
 # Authors:
 #   Brian Lam
