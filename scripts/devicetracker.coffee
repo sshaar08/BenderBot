@@ -250,7 +250,9 @@ module.exports = (robot) ->
             "tristan.delgado", 
             "laurentpierre", 
             "cassiehaffner", 
-            "Shell"]
+            "Shell",
+            "richy",
+          ]
 
   device_admins = process.env.HUBOT_DEVICE_ADMIN or Admins
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
