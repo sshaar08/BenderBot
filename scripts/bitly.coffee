@@ -8,8 +8,8 @@
 #   HUBOT_BITLY_ACCESS_TOKEN
 #
 # Commands:
-#   hubot (bitly|shorten) (me) <url> - Shorten the URL using bit.ly
-#   http://bit.ly/[hash] - looks up the real url
+#   hubot (bitly|shorten) (me) <url> - Shorten the URL using bit.ly [bitly]
+#   http://bit.ly/[hash] - looks up the real url [bitly]
 #
 # Author:
 #   sleekslush

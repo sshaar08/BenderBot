@@ -9,7 +9,7 @@
 #   None
 #
 # Commands:
-#   @CultureCow culture us - get your hit of culture on demand
+#   @CultureCow culture us - get your hit of culture on demand [culture]
 #
 # Author:
 #   kamens

@@ -8,18 +8,20 @@
 #   HUBOT_DEVICE_ADMIN
 #
 # Commands:
-#   hubot device help - Help with commands
-#   hubot <person> has|have <office> <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) 
-#   hubot return <office> <device> - Set a device as returned. (For Device Admin)
-#
-#   hubot Where is the <device> - Shows status of a tracked device
-#   hubot list devices - Shows status of all tracked devices
-#   hubot whos qa admin - Shows device admin
+#   hubot <person> has my <device> - Lend a device to someone. Will also creates the device if it doesn't exist. (For Device Admin) [tracker]
+#   hubot <person> returned my <device> - Set a device as returned. (For Device Admin) [tracker]
+#   hubot return my <device> - Set a device as returned. (For Device Admin) [tracker]
+#   hubot I have a <device> - Start keep track of a device. (For Device Admin) [tracker]
+#   hubot Forget about my <device> - Stop keeping track of a device. (For Device Admin) [tracker]
+#   hubot Wheres my stuff  - Lists QA devices and their status. (For Device Admin) [tracker]
+#   hubot Where is the <device> - Shows status of a tracked device [tracker]
+#   hubot list devices - Shows status of all tracked devices [tracker]
+#   hubot whos qa admin - Shows device admin [tracker]
 #
 # Author:
 #   Brian Lam V.01
-#   Sammy Shaar V.02
-# 
+#   Sammy Shaar V.02, V.03
+#   Tristan Delgado V.03
 
 #TODO add a que to the request list
 #TODO Make the bot DM the user that asks for the info to remove noise in channels.
@@ -39,11 +41,16 @@ class QA_Device_Tracker
         12 : { 'Device_name': 'Samsung Galaxy S6 edge', 'OS Version': '6.0.1', 'MID': 359812, 'location': '', 'type' : 'Android'},
         13 : { 'Device_name': 'Nexus 4', 'OS Version': '5.1.1', 'MID': 299266, 'location': '', 'type' : 'Android'},
         14 : { 'Device_name': 'Samsung Galaxy Nexus', 'OS Version': '4.1.1 Jelly Bean', 'MID': 296535, 'location': '', 'type' : 'Android'},
+        15 : { 'Device_name': 'Samsung Galaxy Tab S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         19 : { 'Device_name': 'iPad 4 with Retina Display.', 'OS Version': 'iOS 9.2.1', 'MID': 299264, 'location': '', 'type': 'IOS'},
         20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 8.4.1', 'MID': 385299, 'location': '', 'type': 'IOS'},
         22 : { 'Device_name': 'iPad Air 2 adamc','OS Version': 'iOS 9.2.1', 'MID': 380758, 'location': '', 'type': 'IOS'}, 
+<<<<<<< HEAD
         24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.3.1', 'MID': 311384, 'location': '', 'type': 'IOS'},
+=======
+        25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
+>>>>>>> ef814f11590ca6951f98bc472404f59c124a14a6
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         33 : { 'Device_name': 'Nexus 7', 'OS Version': '4.4.2 KitKat', 'MID': 296529, 'location': '', 'type' : 'Android'},
@@ -120,7 +127,6 @@ class QA_Device_Tracker
         6 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4311041, 'location': '', 'type': 'IOS'},
         7 : { 'Device_name': 'Samsung Galaxy S4', 'OS Version':  '4.4.2 KitKat', 'MID': 4298544, 'location': '', 'type' : 'Android'},
         8 : { 'Device_name': 'Samsung Galaxy S4', 'OS Version':  '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
-        15 : { 'Device_name': 'Samsung Galaxy S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         16 : { 'Device_name': 'HTC Inspire 4G', 'OS Version': '2.3.3 Gingerbread', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         30 : { 'Device_name': 'Samsung Galaxy Tab 4', 'OS Version':  '5.0.2', 'MID': 380756, 'location': '', 'type' : 'Android'},
         31 : { 'Device_name': 'Samsung Galaxy Tab 4 (7 inch)', 'OS Version': '4.4.2 KitKat', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
@@ -249,7 +255,9 @@ module.exports = (robot) ->
             "tristan.delgado", 
             "laurentpierre", 
             "cassiehaffner", 
-            "Shell"]
+            "Shell",
+            "richy",
+          ]
 
   device_admins = process.env.HUBOT_DEVICE_ADMIN or Admins
   lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE or "true"
@@ -318,7 +326,8 @@ module.exports = (robot) ->
 
 
   
-  robot.respond /(list (.+) device(s)?|(QA Devices)|(Where(\')?s my shit)|qa shit)/i, (msg) ->
+
+  robot.respond /(list device(s)?|(QA Devices)|(Where(\')?s my stuff)|qa stuff)/i, (msg) ->
     response = ["Tracked QA devices:"]
     for office, num in tracker.list()
       if (office != undefined)

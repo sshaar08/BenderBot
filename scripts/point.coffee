@@ -8,12 +8,12 @@
 #   KARMA_ALLOW_SELF
 #
 # Commands:
-#   <thing>++ - give thing some karma
-#   <thing>-- - take away some of thing's karma
-#   hubot karma <thing> - check thing's karma (if <thing> is omitted, show the top 5)
-#   hubot karma empty <thing> - empty a thing's karma
-#   hubot karma best - show the top 5
-#   hubot karma worst - show the bottom 5
+#   <thing>++ - give thing some karma [karma]
+#   <thing>-- - take away some of thing's karma [karma]
+#   hubot karma <thing> - check thing's karma (if <thing> is omitted, show the top 5) [karma]
+#   hubot karma empty <thing> - empty a thing's karma [karma]
+#   hubot karma best - show the top 5 [karma]
+#   hubot karma worst - show the bottom 5 [karma]
 #
 # Author:
 #   stuartf
