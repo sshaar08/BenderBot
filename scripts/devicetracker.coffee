@@ -45,12 +45,12 @@ class QA_Device_Tracker
         19 : { 'Device_name': 'iPad 4 with Retina Display.', 'OS Version': 'iOS 9.2.1', 'MID': 299264, 'location': '', 'type': 'IOS'},
         20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 8.4.1', 'MID': 385299, 'location': '', 'type': 'IOS'},
         22 : { 'Device_name': 'iPad Air 2 adamc','OS Version': 'iOS 9.2.1', 'MID': 380758, 'location': '', 'type': 'IOS'}, 
-<<<<<<< HEAD
+#<<<<<<< HEAD
         24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.3.1', 'MID': 311384, 'location': '', 'type': 'IOS'},
-=======
+#=======
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
->>>>>>> ef814f11590ca6951f98bc472404f59c124a14a6
+#>>>>>>> ef814f11590ca6951f98bc472404f59c124a14a6
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         33 : { 'Device_name': 'Nexus 7', 'OS Version': '4.4.2 KitKat', 'MID': 296529, 'location': '', 'type' : 'Android'},
