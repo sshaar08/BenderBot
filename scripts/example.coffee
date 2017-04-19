@@ -52,9 +52,9 @@ module.exports = (robot) ->
      res.send res.random hibiki
    
 
-   james = ["https://goo.gl/photos/UT6p8AqT5wiDP7vp7"]
-   robot.hear /@james_park *.* (coconut|water)/i, (res) ->
-     res.send res.random james
+  # james = ["https://goo.gl/photos/UT6p8AqT5wiDP7vp7"]
+  # robot.hear /@james_park *.* (coconut|water)/i, (res) ->
+  #   res.send res.random james
   
 
   #
