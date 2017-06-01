@@ -60,6 +60,7 @@ class QA_Device_Tracker
         43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
         44 : { 'Device_name': 'Samsung Galaxy s2 ', 'OS Version': '6.0.1', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         45 : { 'Device_name': 'iPhone 5 Sirius', 'OS Version':  'iOS 9.2.1', 'MID': '', 'location': '', 'type': 'IOS'},
+        46 : { 'Device_name': 'Galaxy S5', 'OS Version':  '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
         
         },
       'sf': {
