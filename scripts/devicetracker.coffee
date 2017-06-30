@@ -157,7 +157,7 @@ class QA_Device_Tracker
               redismem[office][device]['MID'] = @cache[office][device]['MID']
               redismem[office][device]['location'] = "The Vault"
               redismem[office][device]['type'] = @cache[office][device]['type']
-              console.log("Ill be keeping track of the #{office} #{device} for you.")
+              console.log("Ill be keeping track of the #{office} #{device} #{device['Device_name']} for you.")
         @cache = @robot.brain.data.qa_device_tracker
 
   add: (office, id, device, OS, MID, type) ->
@@ -269,7 +269,7 @@ module.exports = (robot) ->
     msg.send tracker.get_brain(item)
 
   robot.hear /device delete (.+) (.+)/i, (msg) ->
-    if (msg.message.user.name in ['Shell', 'sshaar'])
+    if (msg.message.user.name in ['Shell', 'sshaar', 'tristan.delgado'])
       office = msg.match[1]
       device = msg.match[2]
       msg.send tracker.remove(office, device)
