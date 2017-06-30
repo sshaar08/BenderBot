@@ -61,6 +61,8 @@ class QA_Device_Tracker
         44 : { 'Device_name': 'Samsung Galaxy s2 ', 'OS Version': '6.0.1', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         45 : { 'Device_name': 'iPhone 5 Sirius', 'OS Version':  'iOS 9.2.1', 'MID': '', 'location': '', 'type': 'IOS'},
         46 : { 'Device_name': 'Galaxy S5', 'OS Version':  '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
+        47 : { 'Device_name': 'Galaxy S8', 'OS Version':  '7.0', 'MID': '', 'location': '', 'type': 'Android'},
+        48 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
         
         },
       'sf': {
