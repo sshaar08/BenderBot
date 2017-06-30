@@ -2,7 +2,7 @@
   "name": "Bender",
   "version": "0.0.0",
   "private": true,
-  "author": "sshaar08@gmail.com", 
+  "author": "sshaar08@gmail.com",
   "description": "A simple helpful bending robot for our planet express!",
   "dependencies": {
     "hubot": "^2.16.0",
@@ -19,7 +19,7 @@
     "hubot-sentiment": "^1.2.7",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.1",
-    "redis-cli": "1.0.2", 
+    "redis-cli": "1.0.2",
     "redis-dump": "0.1.10"
   },
   "engines": {
