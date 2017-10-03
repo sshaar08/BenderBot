@@ -54,7 +54,7 @@ class QA_Device_Tracker
         34 : { 'Device_name': 'Nexus 7', 'OS Version': '4.2 Jelly Bean', 'MID': 296530, 'location': '', 'type' : 'Android'},
         35 : { 'Device_name': 'Nexus 10','OS Version': '5.1.1 Lollipop', 'MID': 238749, 'location': '', 'type' : 'Android'},
         38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 10.3.1', 'MID': '', 'location': '', 'type': 'IOS'},
-        39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 10.3.1', 'MID': '', 'location': '', 'type': 'IOS'},
+        39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 11.0', 'MID': '', 'location': '', 'type': 'IOS'},
         40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '7.0', 'MID': 414091, 'location': '', 'type': 'Android'},
         42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
         43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
@@ -64,7 +64,7 @@ class QA_Device_Tracker
         47 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
         48 : { 'Device_name': 'Galaxy S8', 'OS Version':  '7.0', 'MID': '', 'location': '', 'type': 'Android'},
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
-
+        50 : { 'Device_name': 'Surface 2', 'OS Version':  '', 'MID': '', 'location': '', 'type': 'Android'},
         },
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
