@@ -150,6 +150,8 @@ class QA_Device_Tracker
           for device, dict of devices
             if (redismem[office][device])
               @cache[office][device]['location'] = redismem[office][device]['location']
+              @cache[office][device]['OS Version'] = redismem[office][device]['OS Version']
+
             else
               console.log("new device #{office} #{device}")
               redismem[office][device] = {}
