@@ -154,7 +154,7 @@ class QA_Device_Tracker
                 console.log('os mismatch 1', office + device)
                 console.log(@cache[office][device]['OS Version'], 'cache')
                 console.log(redismem[office][device]['OS Version'], 'redismem')
-                redismem[office][device]['location'] = @cache[office][device]['OS Version']
+                redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
 
             else
               console.log("new device #{office} #{device}")
