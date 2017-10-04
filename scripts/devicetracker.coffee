@@ -150,7 +150,10 @@ class QA_Device_Tracker
           for device, dict of devices
             if (redismem[office][device])
               @cache[office][device]['location'] = redismem[office][device]['location']
-              @cache[office][device]['OS Version'] = redismem[office][device]['OS Version']
+              if (@cache[office][device]['OS Version'] != redismem[office][device]['OS Version'])
+                console.log('os mismatch 1')
+                console.log(@cache[office][device]['OS Version'], 'cache')
+                console.log(redismem[office][device]['OS Version'], 'redismem')
 
             else
               console.log("new device #{office} #{device}")
