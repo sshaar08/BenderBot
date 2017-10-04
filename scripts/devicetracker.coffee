@@ -32,7 +32,7 @@ class QA_Device_Tracker
   constructor: (@robot) ->
     @cache = {
       'ny' : {
-        1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 9.2', 'MID': 4327902, 'location': '', 'type': 'IOS'},
+        1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 10.2.1', 'MID': 4327902, 'location': '', 'type': 'IOS'},
         2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.3.4', 'MID': 4327898, 'location': '', 'type': 'IOS'},
         3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 10.3.1', 'MID': 4391133, 'location': '', 'type': 'IOS'},
         4 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 7.0.3', 'MID': 4296522, 'location': '', 'type': 'IOS'},
@@ -48,7 +48,7 @@ class QA_Device_Tracker
         24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.3.1', 'MID': 311384, 'location': '', 'type': 'IOS'},
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
-        26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 9.3', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
+        26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 9.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         33 : { 'Device_name': 'Nexus 7', 'OS Version': '4.4.2 KitKat', 'MID': 296529, 'location': '', 'type' : 'Android'},
         34 : { 'Device_name': 'Nexus 7', 'OS Version': '4.2 Jelly Bean', 'MID': 296530, 'location': '', 'type' : 'Android'},
@@ -66,9 +66,6 @@ class QA_Device_Tracker
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
         50 : { 'Device_name': 'Surface 2', 'OS Version':  '', 'MID': '', 'location': '', 'type': 'Android'},
         51 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
-
-
-
         },
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
