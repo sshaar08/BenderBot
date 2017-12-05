@@ -66,6 +66,8 @@ class QA_Device_Tracker
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
         50 : { 'Device_name': 'Surface 2', 'OS Version':  '', 'MID': '', 'location': '', 'type': 'Android'},
         51 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
+        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
+        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
         },
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
