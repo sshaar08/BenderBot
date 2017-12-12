@@ -34,7 +34,7 @@ class QA_Device_Tracker
       'ny' : {
         1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 10.2.1', 'MID': 4327902, 'location': '', 'type': 'IOS'},
         2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.3.4', 'MID': 4327898, 'location': '', 'type': 'IOS'},
-        3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 10.3.1', 'MID': 4391133, 'location': '', 'type': 'IOS'},
+        3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 11.2', 'MID': 4391133, 'location': '', 'type': 'IOS'},
         4 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 7.0.3', 'MID': 4296522, 'location': '', 'type': 'IOS'},
         9 : { 'Device_name': 'Samsung Galaxy S5', 'OS Version':  '4.4.4 KitKat', 'MID': 362257, 'location': '', 'type' : 'Android'},
         10 : { 'Device_name': 'Samsung Galaxy S6', 'OS Version':  '7.0', 'MID': 380531, 'location': '', 'type' : 'Android'},
@@ -53,7 +53,7 @@ class QA_Device_Tracker
         33 : { 'Device_name': 'Nexus 7', 'OS Version': '4.4.2 KitKat', 'MID': 296529, 'location': '', 'type' : 'Android'},
         34 : { 'Device_name': 'Nexus 7', 'OS Version': '4.2 Jelly Bean', 'MID': 296530, 'location': '', 'type' : 'Android'},
         35 : { 'Device_name': 'Nexus 10','OS Version': '5.1.1 Lollipop', 'MID': 238749, 'location': '', 'type' : 'Android'},
-        38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 10.3.1', 'MID': '', 'location': '', 'type': 'IOS'},
+        38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 11.2', 'MID': '', 'location': '', 'type': 'IOS'},
         39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 11.0', 'MID': '', 'location': '', 'type': 'IOS'},
         40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '7.0', 'MID': 414091, 'location': '', 'type': 'Android'},
         42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
