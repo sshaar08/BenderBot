@@ -35,14 +35,14 @@ class QA_Device_Tracker
         1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 10.2.1', 'MID': 4327902, 'location': '', 'type': 'IOS'},
         2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.3.4', 'MID': 4327898, 'location': '', 'type': 'IOS'},
         3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 11.2', 'MID': 4391133, 'location': '', 'type': 'IOS'},
-        4 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 7.0.3', 'MID': 4296522, 'location': '', 'type': 'IOS'},
-        9 : { 'Device_name': 'Samsung Galaxy S5', 'OS Version':  '4.4.4 KitKat', 'MID': 362257, 'location': '', 'type' : 'Android'},
+
+
         10 : { 'Device_name': 'Samsung Galaxy S6', 'OS Version':  '7.0', 'MID': 380531, 'location': '', 'type' : 'Android'},
         12 : { 'Device_name': 'Samsung Galaxy S6 edge', 'OS Version': '6.0.1', 'MID': 359812, 'location': '', 'type' : 'Android'},
         13 : { 'Device_name': 'Nexus 4', 'OS Version': '5.1.1', 'MID': 299266, 'location': '', 'type' : 'Android'},
-        14 : { 'Device_name': 'Samsung Galaxy Nexus', 'OS Version': '4.1.1 Jelly Bean', 'MID': 296535, 'location': '', 'type' : 'Android'},
+
         15 : { 'Device_name': 'Samsung Galaxy Tab S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
-        19 : { 'Device_name': 'iPad 4 with Retina Display.', 'OS Version': 'iOS 10.3.3', 'MID': 299264, 'location': '', 'type': 'IOS'},
+
         20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 10.3.3', 'MID': 385299, 'location': '', 'type': 'IOS'},
         22 : { 'Device_name': 'iPad Air 2','OS Version': 'iOS 10.3.2', 'MID': 380758, 'location': '', 'type': 'IOS'},
         24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
@@ -50,8 +50,8 @@ class QA_Device_Tracker
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
-        33 : { 'Device_name': 'Nexus 7', 'OS Version': '4.4.2 KitKat', 'MID': 296529, 'location': '', 'type' : 'Android'},
-        34 : { 'Device_name': 'Nexus 7', 'OS Version': '4.2 Jelly Bean', 'MID': 296530, 'location': '', 'type' : 'Android'},
+
+
         35 : { 'Device_name': 'Nexus 10','OS Version': '5.1.1 Lollipop', 'MID': 238749, 'location': '', 'type' : 'Android'},
         38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 11.2', 'MID': '', 'location': '', 'type': 'IOS'},
         39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 11.0', 'MID': '', 'location': '', 'type': 'IOS'},
@@ -59,8 +59,8 @@ class QA_Device_Tracker
         42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
         43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
         44 : { 'Device_name': 'Samsung Galaxy s2 ', 'OS Version': '6.0.1', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
-        45 : { 'Device_name': 'iPhone 5 Sirius', 'OS Version':  'iOS 9.2.1', 'MID': '', 'location': '', 'type': 'IOS'},
-        46 : { 'Device_name': 'Galaxy S5', 'OS Version':  '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
+
+
         47 : { 'Device_name': 'iPad Revel', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
         48 : { 'Device_name': 'Galaxy S8', 'OS Version':  '7.0', 'MID': '', 'location': '', 'type': 'Android'},
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
