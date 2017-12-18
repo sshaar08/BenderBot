@@ -35,14 +35,10 @@ class QA_Device_Tracker
         1 : { 'Device_name' : 'iPhone 5S', 'OS Version': 'iOS 10.2.1', 'MID': 4327902, 'location': '', 'type': 'IOS'},
         2 : { 'Device_name' : 'iPhone 6', 'OS Version': 'iOS 9.3.4', 'MID': 4327898, 'location': '', 'type': 'IOS'},
         3 : { 'Device_name': 'iPhone 6+', 'OS Version': 'iOS 11.2', 'MID': 4391133, 'location': '', 'type': 'IOS'},
-
-
         10 : { 'Device_name': 'Samsung Galaxy S6', 'OS Version':  '7.0', 'MID': 380531, 'location': '', 'type' : 'Android'},
         12 : { 'Device_name': 'Samsung Galaxy S6 edge', 'OS Version': '6.0.1', 'MID': 359812, 'location': '', 'type' : 'Android'},
         13 : { 'Device_name': 'Nexus 4', 'OS Version': '5.1.1', 'MID': 299266, 'location': '', 'type' : 'Android'},
-
         15 : { 'Device_name': 'Samsung Galaxy Tab S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
-
         20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 10.3.3', 'MID': 385299, 'location': '', 'type': 'IOS'},
         22 : { 'Device_name': 'iPad Air 2','OS Version': 'iOS 10.3.2', 'MID': 380758, 'location': '', 'type': 'IOS'},
         24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
@@ -50,8 +46,6 @@ class QA_Device_Tracker
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
-
-
         35 : { 'Device_name': 'Nexus 10','OS Version': '5.1.1 Lollipop', 'MID': 238749, 'location': '', 'type' : 'Android'},
         38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 11.2', 'MID': '', 'location': '', 'type': 'IOS'},
         39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 11.0', 'MID': '', 'location': '', 'type': 'IOS'},
@@ -59,8 +53,6 @@ class QA_Device_Tracker
         42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
         43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
         44 : { 'Device_name': 'Samsung Galaxy s2 ', 'OS Version': '6.0.1', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
-
-
         47 : { 'Device_name': 'iPad Revel', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
         48 : { 'Device_name': 'Galaxy S8', 'OS Version':  '7.0', 'MID': '', 'location': '', 'type': 'Android'},
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
