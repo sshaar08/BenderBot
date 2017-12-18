@@ -270,7 +270,7 @@ module.exports = (robot) ->
     msg.send tracker.get_brain(item)
 
   robot.hear /device delete (.+) (.+)/i, (msg) ->
-    if (msg.message.user.name in ['Shell', 'sshaar', 'tristan.delgado'])
+    if (msg.message.user.name in ['Shell', 'sshaar', 'james_park'])
       office = msg.match[1]
       device = msg.match[2]
       msg.send tracker.remove(office, device)
