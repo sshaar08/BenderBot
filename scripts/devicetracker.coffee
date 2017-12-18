@@ -60,6 +60,7 @@ class QA_Device_Tracker
         51 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
         52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
         53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
+        54 : { 'Device_name': 'iPhone x', 'OS Version': 'iOS 11.2', 'MID': 468580, 'location': '', 'type': 'IOS'},
         },
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
