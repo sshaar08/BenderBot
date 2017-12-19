@@ -61,7 +61,10 @@ class QA_Device_Tracker
         52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
         53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
         54 : { 'Device_name': 'iPhone x', 'OS Version': 'iOS 11.2', 'MID': 468580, 'location': '', 'type': 'IOS'},
+        55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
         },
+
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
         2: {'Device_name': 'iPod Touch 5th Gen', 'OS Version': 'iOS 7.0.4', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
