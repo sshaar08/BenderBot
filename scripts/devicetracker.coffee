@@ -58,8 +58,8 @@ class QA_Device_Tracker
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
         50 : { 'Device_name': 'Surface 2', 'OS Version':  '', 'MID': '', 'location': '', 'type': 'Android'},
         51 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
-        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
-        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
+        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
+        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
         54 : { 'Device_name': 'iPhone x', 'OS Version': 'iOS 11.2', 'MID': 468580, 'location': '', 'type': 'IOS'},
         },
       'sf': {
@@ -357,6 +357,16 @@ module.exports = (robot) ->
     for office, num in tracker.list()
       if ("#{office.office}" == msg.match[2].toLowerCase())
         if ("#{office.type}" == 'IOS')
+          response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
+    if (response.length == 1)
+      response = ['No devices for that office. Try ny, sf, mnl']
+    msg.send response.join("\n")
+
+  robot.respond /(list (.+) media)/i, (msg) ->
+    response = ["Tracked QA Media devices:"]
+    for office, num in tracker.list()
+      if ("#{office.office}" == msg.match[2].toLowerCase())
+        if ("#{office.type}" == 'Media')
           response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     if (response.length == 1)
       response = ['No devices for that office. Try ny, sf, mnl']
