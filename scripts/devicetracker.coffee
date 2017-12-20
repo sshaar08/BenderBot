@@ -47,10 +47,10 @@ class QA_Device_Tracker
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         28 : { 'Device_name': 'iPad Pro', 'OS Version':  'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
         35 : { 'Device_name': 'Nexus 10','OS Version': '5.1.1 Lollipop', 'MID': 238749, 'location': '', 'type' : 'Android'},
-        38 : { 'Device_name' : 'iPhone 7', 'OS Version': 'iOS 11.2', 'MID': '', 'location': '', 'type': 'IOS'},
-        39 : { 'Device_name' : 'iPhone 6s', 'OS Version': 'iOS 11.0', 'MID': '', 'location': '', 'type': 'IOS'},
-        40 : { 'Device_name' : 'Samsung Galaxy S7', 'OS Version': '7.0', 'MID': 414091, 'location': '', 'type': 'Android'},
-        42 : { 'Device_name' : 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
+        38 : { 'Device_name': 'iPhone 7', 'OS Version': 'iOS 11.2', 'MID': '', 'location': '', 'type': 'IOS'},
+        39 : { 'Device_name': 'iPhone 6s', 'OS Version': 'iOS 11.0', 'MID': '', 'location': '', 'type': 'IOS'},
+        40 : { 'Device_name': 'Samsung Galaxy S7', 'OS Version': '7.0', 'MID': 414091, 'location': '', 'type': 'Android'},
+        42 : { 'Device_name': 'Samsung Galaxy S7 edge', 'OS Version': '6.0.1', 'MID': '', 'location': '', 'type': 'Android'},
         43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
         44 : { 'Device_name': 'Samsung Galaxy s2 ', 'OS Version': '6.0.1', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         47 : { 'Device_name': 'iPad Revel', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
@@ -63,7 +63,9 @@ class QA_Device_Tracker
         54 : { 'Device_name': 'iPhone x', 'OS Version': 'iOS 11.2', 'MID': 468580, 'location': '', 'type': 'IOS'},
         55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
         56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        },
+        57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        58 : { 'Device_name': 'PhoneSoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'}
+        }
 
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
