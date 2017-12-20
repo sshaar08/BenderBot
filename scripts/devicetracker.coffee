@@ -164,6 +164,7 @@ class QA_Device_Tracker
               redismem[office][device]['MID'] = @cache[office][device]['MID']
               redismem[office][device]['location'] = "The Vault"
               redismem[office][device]['type'] = @cache[office][device]['type']
+              # issue with resolving device name for console log
               console.log("Ill be keeping track of the #{office} #{device} #{device['Device_name']} for you.")
         @cache = @robot.brain.data.qa_device_tracker
 
