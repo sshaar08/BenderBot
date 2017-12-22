@@ -41,7 +41,6 @@ class QA_Device_Tracker
         15 : { 'Device_name': 'Samsung Galaxy Tab S2', 'OS Version': '6.0,1tt', 'MID': 'n/a', 'location': '', 'type' : 'Android'},
         20 : { 'Device_name': 'iPad 4 (Sirius)', 'OS Version':  'iOS 10.3.3', 'MID': 385299, 'location': '', 'type': 'IOS'},
         22 : { 'Device_name': 'iPad Air 2','OS Version': 'iOS 10.3.2', 'MID': 380758, 'location': '', 'type': 'IOS'},
-        24 : { 'Device_name': 'iPad 3','OS Version': 'iOS 7.1.2', 'MID': 296846, 'location': '', 'type': 'IOS'},
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.3.1', 'MID': 311384, 'location': '', 'type': 'IOS'},
         25 : { 'Device_name': 'iPad Mini 2', 'OS Version':'iOS 10.2', 'MID': 311384, 'location': '', 'type': 'IOS'},
         26 : { 'Device_name': 'iPad Mini 4', 'OS Version':'iOS 10.2.1', 'MID': 'n/a', 'location': '', 'type': 'IOS'},
