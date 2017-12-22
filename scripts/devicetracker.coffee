@@ -64,7 +64,8 @@ class QA_Device_Tracker
         55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
         56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
         57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
-        58 : { 'Device_name': 'PhoneSoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
+        58 : { 'Device_name': 'Phonesoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
+        59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
         }
 
       'sf': {
