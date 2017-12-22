@@ -66,7 +66,8 @@ class QA_Device_Tracker
         57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
         58 : { 'Device_name': 'Phonesoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
         59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        }
+        60 : { 'Device_name': 'Mac Mini', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        },
 
       'sf': {
         1: {'Device_name': 'iPhone 4', 'OS Version': 'iOS 7.0.6', 'MID': 'N/A', 'locaion': '', 'type': 'IOS'},
