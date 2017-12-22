@@ -58,14 +58,14 @@ class QA_Device_Tracker
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
         50 : { 'Device_name': 'Surface 2', 'OS Version':  '', 'MID': '', 'location': '', 'type': 'Android'},
         51 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
-        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Other'},
-        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Other'},
+        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
+        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
         54 : { 'Device_name': 'iPhone x', 'OS Version': 'iOS 11.2', 'MID': 468580, 'location': '', 'type': 'IOS'},
-        55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
-        56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
-        57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
-        58 : { 'Device_name': 'Phonesoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
-        59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Other'},
+        55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        58 : { 'Device_name': 'Phonesoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
         }
 
       'sf': {
@@ -165,7 +165,6 @@ class QA_Device_Tracker
               redismem[office][device]['MID'] = @cache[office][device]['MID']
               redismem[office][device]['location'] = "The Vault"
               redismem[office][device]['type'] = @cache[office][device]['type']
-              # issue with resolving device name for console log
               console.log("Ill be keeping track of the #{office} #{device} #{device['Device_name']} for you.")
         @cache = @robot.brain.data.qa_device_tracker
 
@@ -369,11 +368,11 @@ module.exports = (robot) ->
       response = ['No devices for that office. Try ny, sf, mnl']
     msg.send response.join("\n")
 
-  robot.respond /(list (.+) Other)/i, (msg) ->
-    response = ["Tracked QA Other devices:"]
+  robot.respond /(list (.+) Media)/i, (msg) ->
+    response = ["Tracked QA Media devices:"]
     for office, num in tracker.list()
       if ("#{office.office}" == msg.match[2].toLowerCase())
-        if ("#{office.type}" == 'Other')
+        if ("#{office.type}" == 'Media')
           response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     if (response.length == 1)
       response = ['No devices for that office. Try ny, sf, mnl']
