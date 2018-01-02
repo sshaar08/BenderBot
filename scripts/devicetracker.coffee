@@ -156,6 +156,11 @@ class QA_Device_Tracker
                 console.log(@cache[office][device]['OS Version'], 'cache')
                 console.log(redismem[office][device]['OS Version'], 'redismem')
                 redismem[office][device]['OS Version'] = @cache[office][device]['OS Version']
+              if (@cache[office][device]['type'] != redismem[office][device]['type'])
+                console.log('type mismatch 1', office + device)
+                console.log(@cache[office][device]['type'], 'cache')
+                console.log(redismem[office][device]['type'], 'redismem')
+                redismem[office][device]['type'] = @cache[office][device]['type']
 
             else
               console.log("new device #{office} #{device}")
