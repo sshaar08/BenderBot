@@ -57,16 +57,16 @@ class QA_Device_Tracker
         49 : { 'Device_name': 'Galaxy S8+', 'OS Version':  '7.0.', 'MID': '', 'location': '', 'type': 'Android'},
         50 : { 'Device_name': 'Surface 2', 'OS Version':  '', 'MID': '', 'location': '', 'type': 'Android'},
         51 : { 'Device_name': 'Apple Pencil', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'IOS'},
-        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
-        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'Media'},
+        52 : { 'Device_name': 'Fire TV', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'other'},
+        53 : { 'Device_name': 'Roku 4', 'OS Version':  'N/A', 'MID': '', 'location': '', 'type': 'other'},
         54 : { 'Device_name': 'iPhone x', 'OS Version': 'iOS 11.2', 'MID': 468580, 'location': '', 'type': 'IOS'},
-        55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        58 : { 'Device_name': 'Phonesoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        60 : { 'Device_name': 'Mac Mini', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
-        61 : { 'Device_name': 'Samsung DM48E', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'Media'},
+        55 : { 'Device_name': 'PS4', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        56 : { 'Device_name': 'Xbox One', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        57 : { 'Device_name': 'Oculus', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        58 : { 'Device_name': 'Phonesoap', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        60 : { 'Device_name': 'Mac Mini', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        61 : { 'Device_name': 'Samsung DM48E', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
         },
 
       'sf': {
@@ -374,11 +374,11 @@ module.exports = (robot) ->
       response = ['No devices for that office. Try ny, sf, mnl']
     msg.send response.join("\n")
 
-  robot.respond /(list (.+) Media)/i, (msg) ->
-    response = ["Tracked QA Media devices:"]
+  robot.respond /(list (.+) other)/i, (msg) ->
+    response = ["Tracked QA other devices:"]
     for office, num in tracker.list()
       if ("#{office.office}" == msg.match[2].toLowerCase())
-        if ("#{office.type}" == 'Media')
+        if ("#{office.type}" == 'other')
           response.push "*Office*: #{office.office} - *id*: #{office.name} - *device*: #{office.item} *OS*: #{office.OS} - *mid*: #{office.mid} - *location*: _<#{office.location}>_"
     if (response.length == 1)
       response = ['No devices for that office. Try ny, sf, mnl']
