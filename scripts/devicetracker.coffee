@@ -309,7 +309,8 @@ module.exports = (robot) ->
     if (person == msg.message.user.name | (device_admins.indexOf(msg.message.user.name) >= 0) | person == 'I' | person == 'i')
 
       if (person == 'i' | person == 'I')
-        person = '@' + msg.message.user.name
+        # removing @ as it cause the user info to be private
+        # person = '@' + msg.message.user.name
       office = msg.match[4]
       office = office.toLowerCase()
       device = msg.match[5]
