@@ -311,6 +311,7 @@ module.exports = (robot) ->
       if (person == 'i' | person == 'I')
         # removing @ as it cause the user info to be private
         # person = '@' + msg.message.user.name
+        person = msg.message.user.name
       office = msg.match[4]
       office = office.toLowerCase()
       device = msg.match[5]
