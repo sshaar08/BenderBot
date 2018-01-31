@@ -305,7 +305,7 @@ module.exports = (robot) ->
 
   #remove admins here
   robot.respond /(.+) (has|have)\s?(the)?\s?(.+) (.+)/i, (msg) ->
-    person = msg.match[1]
+    person = msg.match[1].replace("@", "")
     if (person == msg.message.user.name | (device_admins.indexOf(msg.message.user.name) >= 0) | person == 'I' | person == 'i')
 
       if (person == 'i' | person == 'I')
