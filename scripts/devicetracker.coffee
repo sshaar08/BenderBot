@@ -66,6 +66,7 @@ class QA_Device_Tracker
         59 : { 'Device_name': 'Double 2 Telepresence Robot', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
         60 : { 'Device_name': 'Mac Mini', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
         61 : { 'Device_name': 'Samsung DM48E', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
+        62 : { 'Device_name': 'Huawei MediaQ M310', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'}
         },
 
       'sf': {
