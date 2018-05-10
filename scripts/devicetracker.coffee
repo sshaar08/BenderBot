@@ -125,7 +125,6 @@ class QA_Device_Tracker
         16 : { 'Device_name': 'Galaxy Tab 4', 'OS Version': '5.0.2 (Lollipop)', 'MID': 602919400114275477, 'location': '', 'type': 'Android'},
         17 : { 'Device_name': 'Galaxy Tab S2', 'OS Version': '', 'MID': 'N/A', 'location': '', 'type': 'Android'},
         18 : { 'Device_name': 'Kindle Fire HD', 'OS Version': '7.5.1', 'MID': 'N/A', 'location': '', 'type': 'Android'},
-        43 : { 'Device_name': 'iPad 4', 'OS Version':  'iOS 7.1.4', 'MID': 'MQJDWDBF182', 'location': '', 'type': 'IOS'},
         },
       'removed_ny' : {
         6 : { 'Device_name': 'iPod Touch 5G', 'OS Version':  'iOS 8.4.1', 'MID': 4311041, 'location': '', 'type': 'IOS'},
