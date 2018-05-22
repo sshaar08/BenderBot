@@ -67,7 +67,8 @@ class QA_Device_Tracker
         61 : { 'Device_name': 'Samsung DM48E', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
         62 : { 'Device_name': 'Huawei MediaQ M310', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'}
         63 : { 'Device_name': 'Apple TV', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'},
-        64 : { 'Device_name': 'Apple TV Remote', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'}
+        64 : { 'Device_name': 'Apple TV', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'}
+        65 : { 'Device_name': 'Apple TV Remote', 'OS Version': 'N/A', 'MID': 'n/a', 'location': '', 'type': 'other'}
         },
 
       'sf': {
