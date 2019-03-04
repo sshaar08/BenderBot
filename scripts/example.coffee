@@ -10,8 +10,8 @@
 
 module.exports = (robot) ->
 
-   robot.hear /badger/i, (res) ->
-     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+  #  robot.hear /badger/i, (res) ->
+  #    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
    
    robot.respond /DIE$/i, (msg) ->
      msg.send "Goodbye, cruel world."
@@ -47,7 +47,7 @@ module.exports = (robot) ->
      res.send res.random spam
   
 
-   hibiki = ["http://cdn.shopify.com/s/files/1/0719/6401/products/hibiki_harmony_grande.png?v=1480620707"]
+   hibiki = ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Hibiki_the_premium_blended_whisky_from_Japanese_distiller_Suntory.jpg/440px-Hibiki_the_premium_blended_whisky_from_Japanese_distiller_Suntory.jpg"]
    robot.hear /\hibiki\b/, (res) ->
      res.send res.random hibiki
    
@@ -143,9 +143,9 @@ module.exports = (robot) ->
   #   res.send 'OK'
   #
    robot.error (err, res) ->
-     robot.logger.error "DOES NOT COMPUTE"
+     robot.logger.error "DOES NOT COMPUTE. Try help"
      if res?
-       res.reply "DOES NOT COMPUTE"
+       res.reply "DOES NOT COMPUTE. Try help"
   
   # robot.respond /have a soda/i, (res) ->
   #   # Get number of sodas had (coerced to a number).
