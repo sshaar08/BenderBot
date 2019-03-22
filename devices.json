@@ -175,6 +175,30 @@
             "CompassId": "",
             "location": "",
             "type": "browserstack"
+        },
+        "23": {
+            "Device_name": "iPhone 6s",
+            "OS Version": "12.1.2",
+            "Serial": "F71QT425GRXV",
+            "CompassId": "",
+            "location": "",
+            "type": "IOS"
+        },
+        "24": {
+            "Device_name": "Iphone xs max",
+            "OS Version": "12.1.2",
+            "Serial": "C39xk6JPKPHF",
+            "CompassId": "",
+            "location": "",
+            "type": "IOS"
+        },
+        "25": {
+            "Device_name": "Iphone 8",
+            "OS Version": "12.0.1",
+            "Serial": "F4HX5QPEJC6C",
+            "CompassId": "",
+            "location": "",
+            "type": "IOS"
         }
     }
 }
