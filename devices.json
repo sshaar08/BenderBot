@@ -1,204 +1,204 @@
 {
-    "ny": {
-        "1": {
-            "Device_name": "iPhone 5s",
-            "OS Version": "9.2.1",
-            "Serial": "DNPMP7LZFNJK",
-            "CompassId": "992",
-            "location": "",
-            "type": "IOS"
-        },
-        "2": {
-            "Device_name": "iPhone 6s",
-            "OS Version": "9.3.1",
-            "Serial": "FK1QK1NNGRXV",
-            "CompassId": "646",
-            "location": "",
-            "type": "IOS"
-        },
-        "3": {
-            "Device_name": "iPad",
-            "OS Version": "9.3.2",
-            "Serial": "DMPPGXYYFK10",
-            "CompassId": "674",
-            "location": "",
-            "type": "IOS"
-        },
-        "4": {
-            "Device_name": "iPad Mini",
-            "OS Version": "8.4.1",
-            "Serial": "DLXM3XDTFCM5",
-            "CompassId": "335",
-            "location": "",
-            "type": "IOS"
-        },
-        "5": {
-            "Device_name": "iPad Pro",
-            "OS Version": "10",
-            "Serial": "DLXQH6Q6GMLD",
-            "CompassId": "678",
-            "location": "",
-            "type": "IOS"
-        },
-        "6": {
-            "Device_name": "iPod",
-            "OS Version": "9.3.3",
-            "Serial": "",
-            "CompassId": "",
-            "location": "<Marius>",
-            "type": "IOS"
-        },
-        "7": {
-            "Device_name": "iPod Touch (6 gen)",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "<Marius>",
-            "type": "IOS"
-        },
-        "8": {
-            "Device_name": "iPhone XR",
-            "OS Version": "12.0.1",
-            "Serial": "G0NXG8U0KXKN",
-            "CompassId": "",
-            "location": "",
-            "type": "IOS"
-        },
-        "9": {
-            "Device_name": "iPhone SE",
-            "OS Version": "11.4.1",
-            "Serial": "DX3WJ4Y0HTVK",
-            "CompassId": "",
-            "location": "",
-            "type": "IOS"
-        },
-        "10": {
-            "Device_name": "Pixel",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "1418",
-            "location": "",
-            "type": "Android"
-        },
-        "11": {
-            "Device_name": "LG G6",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "0028",
-            "location": "",
-            "type": "Android"
-        },
-        "12": {
-            "Device_name": "Samsung S8",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "0029",
-            "location": "",
-            "type": "Android"
-        },
-        "13": {
-            "Device_name": "Nexus 5",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "Android"
-        },
-        "14": {
-            "Device_name": "qa+browserstack@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "15": {
-            "Device_name": "qa+browserstack1@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "16": {
-            "Device_name": "qa+browserstack2@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "17": {
-            "Device_name": "qa+browserstack3@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "18": {
-            "Device_name": "qa+browserstack4@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "19": {
-            "Device_name": "qa+browserstack5@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "20": {
-            "Device_name": "qa+browserstac6k@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "21": {
-            "Device_name": "qa+browserstac7@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "22": {
-            "Device_name": "qa+browserstack8@compass.com",
-            "OS Version": "",
-            "Serial": "",
-            "CompassId": "",
-            "location": "",
-            "type": "browserstack"
-        },
-        "23": {
-            "Device_name": "iPhone 6s",
-            "OS Version": "12.1.2",
-            "Serial": "F71QT425GRXV",
-            "CompassId": "",
-            "location": "",
-            "type": "IOS"
-        },
-        "24": {
-            "Device_name": "Iphone xs max",
-            "OS Version": "12.1.2",
-            "Serial": "C39xk6JPKPHF",
-            "CompassId": "",
-            "location": "",
-            "type": "IOS"
-        },
-        "25": {
-            "Device_name": "Iphone 8",
-            "OS Version": "12.0.1",
-            "Serial": "F4HX5QPEJC6C",
-            "CompassId": "",
-            "location": "",
-            "type": "IOS"
-        }
+  "ny": {
+    "1": {
+      "Device_name": "iPhone 5s",
+      "OS Version": "9.2.1",
+      "Serial": "DNPMP7LZFNJK",
+      "CompassId": "992",
+      "location": "",
+      "type": "IOS"
+    },
+    "2": {
+      "Device_name": "iPhone 6s",
+      "OS Version": "9.3.1",
+      "Serial": "FK1QK1NNGRXV",
+      "CompassId": "646",
+      "location": "",
+      "type": "IOS"
+    },
+    "3": {
+      "Device_name": "iPad",
+      "OS Version": "9.3.2",
+      "Serial": "DMPPGXYYFK10",
+      "CompassId": "674",
+      "location": "",
+      "type": "IOS"
+    },
+    "4": {
+      "Device_name": "iPad Mini",
+      "OS Version": "8.4.1",
+      "Serial": "DLXM3XDTFCM5",
+      "CompassId": "335",
+      "location": "",
+      "type": "IOS"
+    },
+    "5": {
+      "Device_name": "iPad Pro",
+      "OS Version": "10",
+      "Serial": "DLXQH6Q6GMLD",
+      "CompassId": "678",
+      "location": "",
+      "type": "IOS"
+    },
+    "6": {
+      "Device_name": "iPod",
+      "OS Version": "9.3.3",
+      "Serial": "",
+      "CompassId": "",
+      "location": "<Marius>",
+      "type": "IOS"
+    },
+    "7": {
+      "Device_name": "iPod Touch (6 gen)",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "<Marius>",
+      "type": "IOS"
+    },
+    "8": {
+      "Device_name": "iPhone XR",
+      "OS Version": "12.0.1",
+      "Serial": "G0NXG8U0KXKN",
+      "CompassId": "",
+      "location": "",
+      "type": "IOS"
+    },
+    "9": {
+      "Device_name": "iPhone SE",
+      "OS Version": "11.4.1",
+      "Serial": "DX3WJ4Y0HTVK",
+      "CompassId": "",
+      "location": "",
+      "type": "IOS"
+    },
+    "10": {
+      "Device_name": "Pixel",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "1418",
+      "location": "",
+      "type": "Android"
+    },
+    "11": {
+      "Device_name": "LG G6",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "0028",
+      "location": "",
+      "type": "Android"
+    },
+    "12": {
+      "Device_name": "Samsung S8",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "0029",
+      "location": "",
+      "type": "Android"
+    },
+    "13": {
+      "Device_name": "Nexus 5",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "Android"
+    },
+    "14": {
+      "Device_name": "qa+browserstack@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "15": {
+      "Device_name": "qa+browserstack1@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "16": {
+      "Device_name": "qa+browserstack2@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "17": {
+      "Device_name": "qa+browserstack3@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "18": {
+      "Device_name": "qa+browserstack4@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "19": {
+      "Device_name": "qa+browserstack5@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "20": {
+      "Device_name": "qa+browserstack6@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "21": {
+      "Device_name": "qa+browserstack7@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "22": {
+      "Device_name": "qa+browserstack8@compass.com",
+      "OS Version": "",
+      "Serial": "",
+      "CompassId": "",
+      "location": "",
+      "type": "browserstack"
+    },
+    "23": {
+      "Device_name": "iPhone 6s",
+      "OS Version": "12.1.2",
+      "Serial": "F71QT425GRXV",
+      "CompassId": "",
+      "location": "",
+      "type": "IOS"
+    },
+    "24": {
+      "Device_name": "Iphone xs max",
+      "OS Version": "12.1.2",
+      "Serial": "C39xk6JPKPHF",
+      "CompassId": "",
+      "location": "",
+      "type": "IOS"
+    },
+    "25": {
+      "Device_name": "Iphone 8",
+      "OS Version": "12.0.1",
+      "Serial": "F4HX5QPEJC6C",
+      "CompassId": "",
+      "location": "",
+      "type": "IOS"
     }
+  }
 }
