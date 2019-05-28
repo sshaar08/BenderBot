@@ -201,6 +201,7 @@ module.exports = function(robot) {
             "paola.justiniano",
             "raghav",
             "robert.gray",
+            "ray.leung"
             "russell.stephens", 
             "sammy",
             "sammy.shaar",
@@ -324,6 +325,20 @@ module.exports = function(robot) {
         }
       }
     }
+
+    robot.respond(/(list browserstack)/i, function(msg) {
+      let response = ["Tracked QA browserstack accounts:"];
+    const iterable = tracker.list();
+    for (let num = 0; num < iterable.length; num++) {
+      response.push('fml')
+      const office = iterable[num];
+      if (`${office.office}` === 'ny') {
+        if (`${office.type}` == 'browserstack') {
+          response.push(`*Office*: ${office.office} - *id*: ${office.name} - *device*: ${office.item} *OS*: ${office.OS} - *Serial*: ${office.Serial} - *CompassId*: ${office.CompassId} - *location*: _<${office.location}>_`);
+        }
+      }
+    }
+  });
 
     if (response.length === 1) {
       response = ['Coming Soon!'];
