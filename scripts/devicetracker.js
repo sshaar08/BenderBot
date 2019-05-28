@@ -201,7 +201,7 @@ module.exports = function(robot) {
             "paola.justiniano",
             "raghav",
             "robert.gray",
-            "ray.leung"
+            "ray.leung",
             "russell.stephens", 
             "sammy",
             "sammy.shaar",
