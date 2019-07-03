@@ -27,7 +27,7 @@ class QA_Device_Tracker {
   constructor(robot) {
     this.robot = robot;
     this.cache = devices;
-      
+
 
     this.robot.brain.on('loaded', () => {
       if (this.robot.brain.data.qa_device_tracker) {
@@ -36,7 +36,7 @@ class QA_Device_Tracker {
         //console.log(@robot.brain.data.qa_device_tracker)
         for (let office in this.cache) {
           const devices = this.cache[office];
-          if (redismem[office]=== {}) {
+          if (redismem[office] === {}) {
             delete redismem[office];
             console.log("removed", office);
           }
@@ -91,7 +91,7 @@ class QA_Device_Tracker {
       this.cache[office][id]['location'] = "The Vault";
       this.cache[office][id]['type'] = type;
       response = `Ill be keeping track of the' + ${office} + 'id ' + ${id} +' Device_name ' + ${device} + ' OS Version ' + ${OS} + ' Serial ' + ${Serial} + ' CompassId ' + ${CompassId}  + ' location ' + 'The Vault' + 'type' + #{type} + " for you."`
-      (this.robot.brain.data.qa_device_tracker = this.cache);
+        (this.robot.brain.data.qa_device_tracker = this.cache);
     }
     return response;
   }
@@ -118,7 +118,7 @@ class QA_Device_Tracker {
     if (this.cache[office][device]) {
       this.cache[office][device]['location'] = person;
       this.robot.brain.data.qa_device_tracker = this.cache;
-      response = this.cache[office][device]['Device_name'] + " is now with " + '<' +person + '>' + repsonseArray[Math.floor((Math.random() * repsonseArray.length))];
+      response = this.cache[office][device]['Device_name'] + " is now with " + '<' + person + '>' + repsonseArray[Math.floor((Math.random() * repsonseArray.length))];
     }
     return response;
   }
@@ -129,7 +129,7 @@ class QA_Device_Tracker {
       if (this.cache[office] !== undefined) {
         for (let key in this.cache[office]) {
           const device = this.cache[office][key];
-          devices.push({ office, name: key, item: device['Device_name'], Serial: device['Serial'], CompassId: device['CompassId'], OS: device['OS Version'], location: device['location'], type: device['type'],});
+          devices.push({ office, name: key, item: device['Device_name'], Serial: device['Serial'], CompassId: device['CompassId'], OS: device['OS Version'], location: device['location'], type: device['type'], });
         }
       }
     }
@@ -183,46 +183,47 @@ class QA_Device_Tracker {
   }
 }
 
-module.exports = function(robot) {
+module.exports = function (robot) {
   const tracker = new QA_Device_Tracker(robot);
   // Set device_admin to "Shell" for local environment
   const Admins = ["sshaar",
-            "angel.dionisio",
-            "aparna.parlapalli",
-            "alan.wang",
-            "beatrice.mendoza",
-            "cevon.carver",
-            "charles.smith",
-            "leilah",
-            "lee.pollard",
-            "margie.ruparel",
-            "masha.malygina",
-            "neha.mittal",
-            "paola.justiniano",
-            "raghav",
-            "robert.gray",
-            "ray.leung"
-            "russell.stephens", 
-            "sammy",
-            "sammy.shaar",
-            "Shell",
-            "sean.macgahan",
-            "shahadat.noor",
-            "tal.amitai",
-            "tania.goswami",
-            "vamshidhar.soma"
-          ];
+    "angel.dionisio",
+    "aparna.parlapalli",
+    "alan.wang",
+    "beatrice.mendoza",
+    "cevon.carver",
+    "charles.smith",
+    "leilah",
+    "lee.pollard",
+    "margie.ruparel",
+    "masha.malygina",
+    "neha.mittal",
+    "paola.justiniano",
+    "raghav",
+    "robert.gray",
+    "ray.leung",
+    "russell.stephens",
+    "sammy",
+    "sammy.shaar",
+    "Shell",
+    "sean.macgahan",
+    "shahadat.noor",
+    "tal.amitai",
+    "tania.goswami",
+    "vamshidhar.soma",
+    "julio.dionisio"
+  ];
 
   const device_admins = process.env.HUBOT_DEVICE_ADMIN || Admins;
   const lowercase_devices = process.env.HUBOT_DEVICE_LOWERCASE || "true";
 
-  robot.respond(/get brain (.+)/i, function(msg) {
+  robot.respond(/get brain (.+)/i, function (msg) {
     const item = msg.match[1];
 
     return msg.send(tracker.get_brain(item));
   });
 
-  robot.respond(/device delete (.+) (.+)/i, function(msg) {
+  robot.respond(/device delete (.+) (.+)/i, function (msg) {
     if (['Shell', 'sshaar', 'james_park'].includes(msg.message.user.name)) {
       const office = msg.match[1];
       const device = msg.match[2];
@@ -231,24 +232,24 @@ module.exports = function(robot) {
   });
 
   //office, id, device, OS, Serial, type
-  robot.respond(/new device (.+) (.+) (.+) (.+) (.+) (.+)/i, function(msg) {
+  robot.respond(/new device (.+) (.+) (.+) (.+) (.+) (.+)/i, function (msg) {
     if (device_admins.indexOf(msg.message.user.name) >= 0) {
       console.log(msg);
       let office = msg.match[1];
       office = office.toLowerCase();
       const device = msg.match[3];
       const idd = msg.match[2];
-      console.log(typeof(id));
+      console.log(typeof (id));
       const OS = msg.match[4];
       const Serial = msg.match[5];
       const type = msg.match[6];
-      return msg.send(tracker.add(office, idd, device, OS, Serial, type ));
+      return msg.send(tracker.add(office, idd, device, OS, Serial, type));
     }
   });
 
 
   //remove admins here
-  robot.respond(/(.+) (has|have)\s?(the)?\s?(.+) (.+)/i, function(msg) {
+  robot.respond(/(.+) (has|have)\s?(the)?\s?(.+) (.+)/i, function (msg) {
     let person = msg.match[1].replace("@", "");
     if ((person === msg.message.user.name) | (device_admins.indexOf(msg.message.user.name) >= 0) | (person === 'I') | (person === 'i')) {
 
@@ -276,7 +277,7 @@ module.exports = function(robot) {
   });
 
 
-  robot.respond(/return\s?(the|my)?\s?(.+) (.+)/i, function(msg) {
+  robot.respond(/return\s?(the|my)?\s?(.+) (.+)/i, function (msg) {
     console.log('user returning device ' + msg.message.user.name);
     if (device_admins.indexOf(msg.message.user.name) >= 0) {
       let office = msg.match[2];
@@ -297,7 +298,7 @@ module.exports = function(robot) {
 
 
 
-  robot.respond(/(list device(s)?|(QA Devices)|(Where(\')?s my stuff)|qa stuff)/i, function(msg) {
+  robot.respond(/(list device(s)?|(QA Devices)|(Where(\')?s my stuff)|qa stuff)/i, function (msg) {
     let response = ["Tracked QA devices:"];
     const iterable = tracker.list();
     for (let num = 0; num < iterable.length; num++) {
@@ -314,7 +315,7 @@ module.exports = function(robot) {
     return msg.send(response.join("\n"));
   });
 
-  robot.respond(/(list android)/i, function(msg) {
+  robot.respond(/(list android)/i, function (msg) {
     let response = ["Tracked QA Android devices:"];
     const iterable = tracker.list();
     for (let num = 0; num < iterable.length; num++) {
@@ -326,19 +327,19 @@ module.exports = function(robot) {
       }
     }
 
-    robot.respond(/(list browserstack)/i, function(msg) {
+    robot.respond(/(list browserstack)/i, function (msg) {
       let response = ["Tracked QA browserstack accounts:"];
-    const iterable = tracker.list();
-    for (let num = 0; num < iterable.length; num++) {
-      response.push('fml')
-      const office = iterable[num];
-      if (`${office.office}` === 'ny') {
-        if (`${office.type}` == 'browserstack') {
-          response.push(`*Office*: ${office.office} - *id*: ${office.name} - *device*: ${office.item} *OS*: ${office.OS} - *Serial*: ${office.Serial} - *CompassId*: ${office.CompassId} - *location*: _<${office.location}>_`);
+      const iterable = tracker.list();
+      for (let num = 0; num < iterable.length; num++) {
+        response.push('fml')
+        const office = iterable[num];
+        if (`${office.office}` === 'ny') {
+          if (`${office.type}` == 'browserstack') {
+            response.push(`*Office*: ${office.office} - *id*: ${office.name} - *device*: ${office.item} *OS*: ${office.OS} - *Serial*: ${office.Serial} - *CompassId*: ${office.CompassId} - *location*: _<${office.location}>_`);
+          }
         }
       }
-    }
-  });
+    });
 
     if (response.length === 1) {
       response = ['Coming Soon!'];
@@ -347,7 +348,7 @@ module.exports = function(robot) {
   });
 
 
-  robot.respond(/(list ios)/i, function(msg) {
+  robot.respond(/(list ios)/i, function (msg) {
     let response = ["Tracked QA IOS devices:"];
     const iterable = tracker.list();
     for (let num = 0; num < iterable.length; num++) {
@@ -364,7 +365,7 @@ module.exports = function(robot) {
     return msg.send(response.join("\n"));
   });
 
-  robot.respond(/(list other)/i, function(msg) {
+  robot.respond(/(list other)/i, function (msg) {
     let response = ["Tracked QA other devices:"];
     const iterable = tracker.list();
     for (let num = 0; num < iterable.length; num++) {
@@ -382,7 +383,7 @@ module.exports = function(robot) {
   });
 
 
-  robot.respond(/storage delete (\w*)$/i, function(msg) {
+  robot.respond(/storage delete (\w*)$/i, function (msg) {
     if (device_admins.indexOf(msg.message.user.name) >= 0) {
       this.robot.brain.remove(qa_device_tracker);
       return msg.send(`${msg.match[1]} deleted from storage`);
@@ -391,7 +392,7 @@ module.exports = function(robot) {
 
 
 
-  robot.respond(/(device-status|where is my|wheres my|where is the) (.+) (.+)/i, function(msg) {
+  robot.respond(/(device-status|where is my|wheres my|where is the) (.+) (.+)/i, function (msg) {
     const office = msg.match[2];
     let device = msg.match[3];
     if (lowercase_devices) { device = device.toLowerCase(); }
@@ -401,7 +402,7 @@ module.exports = function(robot) {
   robot.respond(/(whos admin)/i, msg => msg.send(`${Admins}`));
 
 
-  robot.respond(/update device (.+) (.+) (.+) (.+)/i, function(msg) {
+  robot.respond(/update device (.+) (.+) (.+) (.+)/i, function (msg) {
     if (device_admins.indexOf(msg.message.user.name) >= 0) {
       let office = msg.match[1];
       office = office.toLowerCase();
@@ -414,7 +415,7 @@ module.exports = function(robot) {
     }
   });
 
-  return robot.hear(/(device help)/i, function(msg) {
+  return robot.hear(/(device help)/i, function (msg) {
     const response = ["QA Device Tracker Help"];
     response.push("Commands:");
     response.push("ADMIN ONLY COMMANDS ");
@@ -429,7 +430,7 @@ module.exports = function(robot) {
     response.push("list devices - Shows status of all devices");
     response.push("list ios - Shows status of all IOS devices");
     response.push("whos admin - Shows device admins");
-    
+
 
     return msg.send(response.join("\n"));
   });
