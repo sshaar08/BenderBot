@@ -279,7 +279,6 @@ module.exports = function (robot) {
 
   robot.respond(/return\s?(the|my)?\s?(.+) (.+)/i, function (msg) {
     console.log('user returning device ' + msg.message.user.name);
-    if (device_admins.indexOf(msg.message.user.name) >= 0) {
       let office = msg.match[2];
       office = office.toLowerCase();
       const device = msg.match[3];
@@ -290,9 +289,6 @@ module.exports = function (robot) {
       } else {
         return msg.send(tracker.return(office, device));
       }
-    } else {
-      return msg.send("You are not an admin. Please give it to one of the QA teammembers in your office for return, _Don't just place it on their desk_");
-    }
   });
 
 
