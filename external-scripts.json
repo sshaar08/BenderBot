@@ -4,5 +4,6 @@
   "hubot-heroku-keepalive",
   "hubot-redis-brain",
   "hubot-rules",
-  "hubot-sentiment"
+  "hubot-sentiment",
+  "hubot-shipit"
 ]
