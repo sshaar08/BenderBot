@@ -199,6 +199,22 @@
       "CompassId": "",
       "location": "",
       "type": "IOS"
-    }
+    },
+    "26": {
+     "Device_name": "Iphone 11",
+     "OS Version": "13.1.3",
+     "Serial": "DNPZGBDAN72P",
+     "CompassId": "",
+     "location": "",
+     "type": "IOS"
+   },
+   "27": {
+     "Device_name": "Iphone X",
+     "OS Version": "13.1.3",
+     "Serial": "GHLZ940LJCLF",
+     "CompassId": "",
+     "location": "",
+     "type": "IOS"
+   }
   }
 }
